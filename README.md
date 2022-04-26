@@ -8,11 +8,11 @@ Takım X
 
 ## Takım Elemanları
 
-- 1: Product Owner
-- 2: Scrum Master
-- 3: Team Member/Developer
-- 4: Team Member/Developer
-- 5: Team Member/Developer
+- Mina Elvan Tetik: Product Owner
+- Süeda Handan Dalkıran: Scrum Master
+- Gizem Dekeli: Team Member/Developer
+- Elif Yener: Team Member/Developer
+- Ertuğrul Baran: Team Member/Developer
 
 ## Ürün İsmi
 
@@ -32,7 +32,7 @@ Takım X
 
 ## Product Backlog URL
 
-
+https://trello.com/invite/b/ITVKOiNN/33ca9ef9f6539839838b52c43f271ab5/oyunveuygulamaakademisiunitygrup86
 
 ---
 
