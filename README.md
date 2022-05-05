@@ -32,7 +32,7 @@ Grup 86
 
 ## Product Backlog URL
 
-<img src="https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-9c9f-aa196e10cbaa.png" width="425" height="325">
+https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-9c9f-aa196e10cbaa.png
 
 ---
 
