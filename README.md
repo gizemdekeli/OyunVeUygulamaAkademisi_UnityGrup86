@@ -2,7 +2,7 @@
 Oyun ve Uygulama Akademisi Bootcamp Unity 86. Grup Oyun Projesi
 # **Takım İsmi**
 
-Takım X
+Grup 86
 
 # Ürün İle İlgili Bilgiler
 
@@ -16,19 +16,19 @@ Takım X
 
 ## Ürün İsmi
 
--- --
+- Roll N Grow
 
 ## Ürün Açıklaması
 
-- 
+- Level tabanlı runner türünde... 
 
 ## Ürün Özellikleri
 
-- 
+- Hypercasual tarzında
 
 ## Hedef Kitle
 
-- 
+- Mobil cihaz kullanabilen herkes
 
 ## Product Backlog URL
 
