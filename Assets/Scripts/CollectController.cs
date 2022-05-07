@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CollectController : MonoBehaviour
 {
-    private Vector3 tempscale;
-    private float temppos;
-    [SerializeField] private float growth;
+    [Tooltip("Meyvenin Büyüme Miktarý")]
+    [SerializeField] Vector3 growthAmount;
+
+    Vector3 growedScale;
+    Transform _transform;
+    private void Start()
+    {
+        _transform = transform;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Collectible"))
+        if (other.gameObject.CompareTag("Collectable"))
         {
-            tempscale = gameObject.transform.localScale;
-            tempscale.x += growth/100;
-            tempscale.y += growth/100;
-            tempscale.z += growth/100;
-            gameObject.transform.localScale = tempscale;
-
-            Destroy(other.gameObject);
+            growedScale = _transform.localScale + growthAmount;
+            _transform.DOScale(growedScale, 0.2f);
+            other.gameObject.SetActive(false);
         }
     }
 }

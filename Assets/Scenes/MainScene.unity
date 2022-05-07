@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1492,7 +1492,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!114 &2034130555
 MonoBehaviour:
@@ -1506,8 +1506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cd5a8f93c8ed449afff3f5d7938424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  xSpeed: 15
+  rollspeed: 2
+  xSpeed: 5
+  maxRollSpeed: 10
 --- !u!114 &2034130557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,7 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecb514c489bea4449786232ccfde885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growth: 5
+  growthAmount: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &2062157364
 GameObject:
   m_ObjectHideFlags: 0

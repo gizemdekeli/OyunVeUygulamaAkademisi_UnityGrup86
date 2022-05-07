@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float xSpeed;
-    private float xInput;
+    [SerializeField] float rollspeed;
+    [SerializeField] float xSpeed;
+    [SerializeField] float maxRollSpeed;
+
+    float xInput;
+    float xPos;
     Rigidbody _rigidbody;
-    private void Start() 
+    Transform _transform;
+
+    private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _transform = transform;
     }
     private void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
-        if ( xInput != 0)
-        {
-            if(transform.position.x > 4.5f)
-            {
-                transform.position = new Vector3(4.5f, transform.position.y, transform.position.z);
-            }
-            else if (transform.position.x < -4.5f)
-            {
-                transform.position = new Vector3(-4.5f, transform.position.y, transform.position.z);
-            }
-            else
-            {
-                transform.Translate(new Vector3(xInput*xSpeed*Time.deltaTime, 0, 0));
-            }
-        }
+        // Fruit move
+        xInput = Input.GetAxis("Horizontal") * xSpeed;
+        rollspeed = Mathf.Clamp(_rigidbody.velocity.z, 0, maxRollSpeed);
+        _rigidbody.velocity = new Vector3(xInput, _rigidbody.velocity.y, rollspeed);
+
+        // Move limit
+        xPos = Mathf.Clamp(_transform.position.x, -4.5f, 4.5f);
+        _transform.position = new Vector3(xPos, _transform.position.y, _transform.position.z);
     }
     private void FixedUpdate()
     {
-        _rigidbody.AddForce(new Vector3(0, 0, Time.deltaTime*moveSpeed*100));
+        // Rolling
+        _rigidbody.AddForce(rollspeed * Vector3.forward, ForceMode.Acceleration);
     }
 }
