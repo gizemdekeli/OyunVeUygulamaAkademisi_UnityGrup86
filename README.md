@@ -52,9 +52,6 @@ https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-
 
 - **Puan tamamlama mantığı**:  Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ve ilk sprint'in daha çok araştırma hedefiyle planlanması sebebiyle (altyapı oluşturma) 100 puan ile başlamasının yeterli olacağına karar verildi.
 
-- **Backlog düzeni ve Story seçimleri**:Backloglarımız daha çok projenin temeline (fikrin belirlenmesi,karakterlerin temel düzeyde belirlenmesi, projenin başlatılması) ve sprint sonuna görsel bir portatif çıkarma aracıyla düzenlendi.
-
-Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
 
 - **Daily Scrum**:Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi. Örnek: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
 
