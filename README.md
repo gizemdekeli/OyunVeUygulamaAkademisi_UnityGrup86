@@ -20,15 +20,23 @@ Grup 86
 
 ## Ürün Açıklaması
 
-- Level tabanlı runner türünde... 
+Level tabanlı runner türünde olan bu oyun aynı zamanda oyunculara keyifle geçirilecek bir zaman deneyimi sunmakta. Oynanan karakterin çeşitli engeller ve onu zorlayacak yollardan geçmesi ve bu yollardan geçerken kendini geliştirmeye devam etmesi ile birlikte eğlence de tıpkı karakterler gibi büyüyor.
+ 
+Yuvarlan ve büyü… İşte bütün kuralımız bu.
+Aman dikkat et! Yollardaki engeller kuralları durdurmasın… 
+ 
 
 ## Ürün Özellikleri
 
-- Hypercasual tarzında
+Hypercasual tarzında, seviye ile ilerlenen bir oyun.
+Oyunda karakterler bir sebze ya da meyve olarak karşımıza çıkıyor.
+Karakter ilerledikçe geçtiği yollarda bulunan ve puan almasını sağlayan kendisinden olan sebze veya meyveler var. Bu ürünleri toplamak hem puan getirisi sağlıyor hem de karakterin büyüklüğünün artmasına sebep oluyor. 
+Ancak yollarda bazı engeller de bulunmakta. Bu engeller karakterin o engelin karşısına gelene kadar topladıklarının azalmasına neden olmakta. 
+Oyunu oynayan oyuncular da yollarda bulunan puanları toplayıp engellerden kaçarak kendi karakterlerini büyütmeyi amaçlıyorlar. 
 
 ## Hedef Kitle
 
-- Mobil cihaz kullanabilen herkes
+Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 ## Product Backlog URL
 
