@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FollowSphere : MonoBehaviour
 {
-    [SerializeField] GameObject domates;
+    [SerializeField] GameObject tomato;
 
     private void Update()
     {
-        transform.position = new Vector3(0,0,domates.transform.position.z);
+        transform.position = new Vector3(0, tomato.transform.position.y, tomato.transform.position.z);
     }
 }
