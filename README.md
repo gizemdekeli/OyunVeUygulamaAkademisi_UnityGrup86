@@ -52,7 +52,7 @@ https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-
 
 - **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ve ilk sprint'in daha çok araştırma hedefiyle planlanması sebebiyle (altyapı oluşturma) 60 puan ile başlamasının yeterli olacağına karar verildi.
 
-- **Backlog Düzeni**: Backloglarımız daha çok projenin temeline (fikrin belirlenmesi,karakterlerin temel düzeyde belirlenmesi, projenin başlatılması) ve sprint sonuna görsel bir protatif çıkarma aracıyla düzenlendi.
+- **Backlog Düzeni**: Backloglarımız daha çok projenin temeline (fikrin belirlenmesi,karakterlerin temel düzeyde belirlenmesi, projenin başlatılması) ve sprint sonuna görsel bir prototip çıkarma aracıyla düzenlendi.
 
 
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
@@ -64,11 +64,11 @@ https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-
   
 
 - **Sprint Review**: 
-Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararlaştırılan birkaç fikirde değişiklik yapıldı. (can ve reklamların nasıl yerleştirileceği ve oyun akışında bunların nasıl yer alacağı) Ve buna göre hazırlanan backlogta değişiklik yapıldı. Planlandığı şekilde bu sprintte sahne ve mekaniğe yönelik temel çalışmalar yapıldı bir dahaki sprintte oyunun %90 oranında belirlenen bittiye ulaşması için product backlog güncellendi. Katılımcılar: developer tema, product owner, scrum master
+Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararlaştırılan birkaç fikirde değişiklik yapıldı. (can ve reklamların nasıl yerleştirileceği ve oyun akışında bunların nasıl yer alacağı) Ve buna göre hazırlanan backlogta değişiklik yapıldı. Planlandığı şekilde bu sprintte sahne ve mekaniğe yönelik temel çalışmalar yapıldı bir dahaki sprintte oyunun %90 oranında belirlenen bittiye ulaşması için product backlog güncellendi. Katılımcılar: developer team, product owner, scrum master
 
 - **Sprint Retrospective:**
 Takım içinde görev dağılımında güncellemeler yapıldı (scrum master ve product ownera geliştirme tarafında verilecek görevler kararlaştırıldı) 
-Daily scrumlara verilen önemin artırılmalı
+Daily scrumlara verilen önemin artırılması
 
 -**Diğer Notlar**:
 - N/A
