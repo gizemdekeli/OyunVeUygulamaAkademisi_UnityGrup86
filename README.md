@@ -48,7 +48,7 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 # Sprint 1
 
 - **Sprint Notları**: Toplantı notları ve puanlar backlog itemların açıklama kısmına eklendi. 
-- https://miro.com/app/board/uXjVO2HRMaA=/
+https://miro.com/welcomeonboard/NGhrOHdQN0hzYW8yZXBEQktoTTkwTm96UHlPUFVOblJTQlFFbEE1aUN1UEdBWDM4TUtFTGZYUWlkYlpCZlNqdHwzMDc0NDU3MzU0Mjc2Mjc1MDY3?share_link_id=689686042298
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 60 Puan
 
