@@ -48,12 +48,14 @@ https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-
 
 - **Sprint Notları**: Toplantı notları ve puanlar backlog itemların açıklama kısmına eklendi. 
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 100 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 60 Puan
 
-- **Puan tamamlama mantığı**:  Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ve ilk sprint'in daha çok araştırma hedefiyle planlanması sebebiyle (altyapı oluşturma) 100 puan ile başlamasının yeterli olacağına karar verildi.
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ve ilk sprint'in daha çok araştırma hedefiyle planlanması sebebiyle (altyapı oluşturma) 60 puan ile başlamasının yeterli olacağına karar verildi.
+
+- **Backlog Düzeni**: Backloglarımız daha çok projenin temeline (fikrin belirlenmesi,karakterlerin temel düzeyde belirlenmesi, projenin başlatılması) ve sprint sonuna görsel bir protatif çıkarma aracıyla düzenlendi.
 
 
-- **Daily Scrum**:Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi. Örnek: [Sprint 1 Daily Scrum Chats](https://github.com/OyunveUygulamaAkademisi/BootcampScrumTemplate/blob/main/ProjectManagement/Sprint1Documents/DailyScrumMeetingNotesSprint1.docx?raw=true)
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
 
 - **Sprint board update**: Sprint board screenshotları: 
 
@@ -62,12 +64,11 @@ https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-
   
 
 - **Sprint Review**: 
-Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için gerekli görülmüştür. Fakat bir yandan da veritabanı form sayfası için gerekli olmamıştır. O sebeple PBI bir sonraki sprint'e aktarılmıştır. Çıkan ürünün çalışmasında ve testlerinde bir problem görülmemiştir. Ekstra koyulması gereken özellikler belirlenmiştir. Sprint Review katılımcıları: ......
+Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararlaştırılan birkaç fikirde değişiklik yapıldı. (can ve reklamların nasıl yerleştirileceği ve oyun akışında bunların nasıl yer alacağı) Ve buna göre hazırlanan backlogta değişiklik yapıldı. Planlandığı şekilde bu sprintte sahne ve mekaniğe yönelik temel çalışmalar yapıldı bir dahaki sprintte oyunun %90 oranında belirlenen bittiye ulaşması için product backlog güncellendi. Katılımcılar: developer tema, product owner, scrum master
 
 - **Sprint Retrospective:**
-  - Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır
-  - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı
-  - Unit test'ler için ayrılan efor/saat arttırılmalı 
+Takım içinde görev dağılımında güncellemeler yapıldı (scrum master ve product ownera geliştirme tarafında verilecek görevler kararlaştırıldı) 
+Daily scrumlara verilen önemin artırılmalı
 
 -**Diğer Notlar**:
 - N/A
