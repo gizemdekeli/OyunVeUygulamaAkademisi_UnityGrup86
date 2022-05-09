@@ -63,7 +63,9 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 
 - **Ürün Durumu**: Ekran görüntüleri:
-  
+  <img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/Project%20ScreenShot.jpg?raw=true" alt="Project Screenshot" style="height: 500; width: 250;"/>
+<br>
+<img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/In-Game%20Screenshot.png?raw=true" alt="In-Game Screenshot" style="height: 150; width: 250;"/>
 
 - **Sprint Review**: 
 Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararlaştırılan birkaç fikirde değişiklik yapıldı. (can ve reklamların nasıl yerleştirileceği ve oyun akışında bunların nasıl yer alacağı) Ve buna göre hazırlanan backlogta değişiklik yapıldı. Planlandığı şekilde bu sprintte sahne ve mekaniğe yönelik temel çalışmalar yapıldı bir dahaki sprintte oyunun %90 oranında belirlenen bittiye ulaşması için product backlog güncellendi. Katılımcılar: developer team, product owner, scrum master
