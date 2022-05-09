@@ -40,7 +40,8 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 ## Product Backlog URL
 
-https://user-images.githubusercontent.com/35369764/166996889-aee51c86-4800-4145-9c9f-aa196e10cbaa.png
+![image](https://user-images.githubusercontent.com/104429912/167481560-d2d03fb5-1e36-445e-a145-fbf49409e64a.png)
+
 
 ---
 
