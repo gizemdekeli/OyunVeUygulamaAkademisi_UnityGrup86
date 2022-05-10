@@ -63,7 +63,7 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
  
 - **Sprint board update**: Sprint board Ekran görüntüsü: 
 
-  <img src="https://user-images.githubusercontent.com/35369764/167606796-0abbd4a2-ea94-4493-ab7e-6bdab6c000fc.png" alt="Sprint board" style="height: 100; width: 30;"/>
+  <img src="https://user-images.githubusercontent.com/35369764/167614024-85de3b36-04f5-48a9-82b3-93913b621546.png" alt="Sprint board" style="height: 100; width: 30;"/>
 
 - **Ürün Durumu**: Ekran görüntüleri:
 <p align="center">
