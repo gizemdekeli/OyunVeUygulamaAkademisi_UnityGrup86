@@ -58,10 +58,9 @@ https://miro.com/app/board/uXjVO2HRMaA=/?share_link_id=361031596989
 
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
 [Daily Scrum Görselleri / Word Belgesi] (https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/dailyscrum%20görselleri.docx)
-- **Sprint board update**: Sprint board screenshotları: 
+- **Sprint board update**: Sprint board Ekran görüntüsü: 
 
-![image](https://user-images.githubusercontent.com/35369764/167604453-705425c1-ff3f-4ed1-bf86-fa9d38e44eb9.png)
-
+  <img src="https://user-images.githubusercontent.com/35369764/167606796-0abbd4a2-ea94-4493-ab7e-6bdab6c000fc.png" alt="Sprint board" style="height: 100; width: 30;"/>
 
 - **Ürün Durumu**: Ekran görüntüleri:
 <p align="center">
@@ -78,17 +77,3 @@ Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararla
 - **Sprint Retrospective:**
 Takım içinde görev dağılımında güncellemeler yapıldı (scrum master ve product ownera geliştirme tarafında verilecek görevler kararlaştırıldı) 
 Daily scrumlara verilen önemin artırılması
-
--**Diğer Notlar**:
-- N/A
-
----
-
-# Sprint 2
-
-
----
-
-# Sprint 3
-
----
