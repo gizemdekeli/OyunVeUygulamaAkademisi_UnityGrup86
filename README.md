@@ -42,13 +42,12 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 [Backlog URL / Trello](https://trello.com/b/mlHr0ktw/oyungeliştirme-productbacklog)
 
-
 ---
 
 # Sprint 1
 
 - **Sprint Notları**: Toplantı notları ve puanlar backlog itemların açıklama kısmına eklendi. 
-https://miro.com/welcomeonboard/NGhrOHdQN0hzYW8yZXBEQktoTTkwTm96UHlPUFVOblJTQlFFbEE1aUN1UEdBWDM4TUtFTGZYUWlkYlpCZlNqdHwzMDc0NDU3MzU0Mjc2Mjc1MDY3?share_link_id=689686042298
+https://miro.com/app/board/uXjVO2HRMaA=/?share_link_id=361031596989
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 60 Puan
 
@@ -58,9 +57,9 @@ https://miro.com/welcomeonboard/NGhrOHdQN0hzYW8yZXBEQktoTTkwTm96UHlPUFVOblJTQlFF
 
 
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
-
+[Daily Scrum Görselleri / Word Belgesi] (https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/dailyscrum%20görselleri.docx)
 - **Sprint board update**: Sprint board screenshotları: 
-- 
+
 ![image](https://user-images.githubusercontent.com/35369764/167604453-705425c1-ff3f-4ed1-bf86-fa9d38e44eb9.png)
 
 
