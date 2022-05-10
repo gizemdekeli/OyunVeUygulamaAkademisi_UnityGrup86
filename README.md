@@ -40,7 +40,7 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 ## Product Backlog URL
 
-![image](https://user-images.githubusercontent.com/104429912/167481560-d2d03fb5-1e36-445e-a145-fbf49409e64a.png)
+[Backlog URL / Trello](https://trello.com/b/mlHr0ktw/oyungeliştirme-productbacklog)
 
 
 ---
@@ -60,6 +60,8 @@ https://miro.com/welcomeonboard/NGhrOHdQN0hzYW8yZXBEQktoTTkwTm96UHlPUFVOblJTQlFF
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
 
 - **Sprint board update**: Sprint board screenshotları: 
+- 
+![image](https://user-images.githubusercontent.com/35369764/167604453-705425c1-ff3f-4ed1-bf86-fa9d38e44eb9.png)
 
 
 - **Ürün Durumu**: Ekran görüntüleri:
