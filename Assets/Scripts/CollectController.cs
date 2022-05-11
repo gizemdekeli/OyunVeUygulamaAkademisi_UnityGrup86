@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class CollectController : MonoBehaviour
 {
-    [Tooltip("Meyvenin Büyüme Miktarý")]
-    [SerializeField] Vector3 growthAmount;
-
-    Vector3 growedScale;
-    Transform _transform;
+    [Tooltip("Meyvenin Buyume Miktari")]
+    [SerializeField] private Vector3 growthAmount;
+    [SerializeField] private float scoreIncreaseAmount;
+    [SerializeField] private TMP_Text _scoretext;
+    private float score = 0;
+    private Vector3 growedScale;
+    private Transform _transform;
     private void Start()
     {
         _transform = transform;
@@ -21,6 +24,8 @@ public class CollectController : MonoBehaviour
             growedScale = _transform.localScale + growthAmount;
             _transform.DOScale(growedScale, 0.2f);
             other.gameObject.SetActive(false);
+            score += scoreIncreaseAmount;
+            _scoretext.text = score.ToString();
         }
     }
 }
