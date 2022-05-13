@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameControllerNameSpace;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float rollspeed;
+    [Header("Player Controls")]
     [SerializeField] float xSpeed;
-    [SerializeField] float maxRollSpeed;
+    [SerializeField] float moveLimitX;
 
     float xInput;
     float xPos;
@@ -18,20 +19,26 @@ public class Movement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _transform = transform;
     }
+
     private void Update()
     {
-        // Fruit move
-        xInput = Input.GetAxis("Horizontal") * xSpeed;
-        rollspeed = Mathf.Clamp(_rigidbody.velocity.z, 0, maxRollSpeed);
-        _rigidbody.velocity = new Vector3(xInput, _rigidbody.velocity.y, rollspeed);
+        Move();
+    }
 
-        // Move limit
-        xPos = Mathf.Clamp(_transform.position.x, -4.5f, 4.5f);
-        _transform.position = new Vector3(xPos, _transform.position.y, _transform.position.z);
-    }
-    private void FixedUpdate()
+    void Move()
     {
-        // Rolling
-        _rigidbody.AddForce(rollspeed * Vector3.forward, ForceMode.Acceleration);
+        if (GameController.gameState == GameController.GameState.Started)
+        {
+            // Fruit move
+            xInput = Input.GetAxis("Horizontal") * xSpeed;
+            _rigidbody.velocity = new Vector3(xInput, _rigidbody.velocity.y, _rigidbody.velocity.z);
+
+            // Move limit
+            xPos = Mathf.Clamp(_transform.position.x, -moveLimitX, moveLimitX);
+            _transform.position = new Vector3(xPos, _transform.position.y, _transform.position.z);
+        }
     }
+
+
+
 }

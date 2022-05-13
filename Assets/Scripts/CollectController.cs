@@ -6,13 +6,13 @@ using TMPro;
 
 public class CollectController : MonoBehaviour
 {
-    [Tooltip("Meyvenin Buyume Miktari")]
     [SerializeField] private Vector3 growthAmount;
     [SerializeField] private float scoreIncreaseAmount;
     [SerializeField] private TMP_Text _scoretext;
-    private float score = 0;
+    public float score = 0;
     private Vector3 growedScale;
     private Transform _transform;
+
     private void Start()
     {
         _transform = transform;
