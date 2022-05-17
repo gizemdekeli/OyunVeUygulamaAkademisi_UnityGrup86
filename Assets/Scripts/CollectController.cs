@@ -8,7 +8,8 @@ public class CollectController : MonoBehaviour
 {
     [SerializeField] private Vector3 growthAmount;
     [SerializeField] private float scoreIncreaseAmount;
-    [SerializeField] private TMP_Text _scoretext;
+    [SerializeField] private TMP_Text scoretext;
+    [SerializeField] private ParticleSystem particleCollect;
     public float score = 0;
     private Vector3 growedScale;
     private Transform _transform;
@@ -25,7 +26,8 @@ public class CollectController : MonoBehaviour
             _transform.DOScale(growedScale, 0.2f);
             other.gameObject.SetActive(false);
             score += scoreIncreaseAmount;
-            _scoretext.text = score.ToString();
+            scoretext.text = score.ToString();
+            particleCollect.Play();
         }
     }
 }
