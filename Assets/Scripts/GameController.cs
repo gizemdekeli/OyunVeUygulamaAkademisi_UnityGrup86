@@ -23,6 +23,7 @@ namespace GameControllerNameSpace
 
         public enum GameState { Started, Paused }
         public static GameState gameState;
+        public static bool isShrinking;
 
         private void Awake()
         {
@@ -46,7 +47,10 @@ namespace GameControllerNameSpace
             {
                 _rigidbody.AddForce(rollspeed * Vector3.forward, ForceMode.Acceleration);
                 _rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, maxRollSpeed);
-                playerTransform.localScale -= Vector3.one / shrinkFraction;
+                if (isShrinking)
+                {
+                    playerTransform.localScale -= Vector3.one / shrinkFraction;
+                }
             }
             else if (playerTransform.localScale.x < 0.1f)
             {
@@ -62,6 +66,7 @@ namespace GameControllerNameSpace
             Debug.Log("Game starts in 3 seconds");
             yield return new WaitForSeconds(3);
             gameState = GameState.Started;
+            isShrinking = true;
         }
     }
 }

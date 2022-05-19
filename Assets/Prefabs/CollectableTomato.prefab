@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4032198200961766790}
   m_Layer: 0
   m_Name: CollectableTomato
-  m_TagString: Collectable
+  m_TagString: Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
