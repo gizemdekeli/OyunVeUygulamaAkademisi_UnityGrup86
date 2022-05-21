@@ -1,0 +1,33 @@
+{
+    "name": "TouchControls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "323c9898-ab0a-4be6-bc2b-3490e4a3ee3d",
+            "actions": [
+                {
+                    "name": "PrimaryTouch Position",
+                    "type": "Value",
+                    "id": "3cda5a6e-01b3-4d7b-aae9-f1b2b8a228bc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "99deee68-c073-4105-b9ff-82f9557b6fd9",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryTouch Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

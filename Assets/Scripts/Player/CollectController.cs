@@ -5,18 +5,16 @@ using DG.Tweening;
 using TMPro;
 using GameControllerNameSpace;
 using Unity.Ad.Interstýtýal;
-using Unity.Services.Mediation;
-using Unity.Services.Core;
 
 public class CollectController : MonoBehaviour
 {
-    IMediationService Instance;
     [SerializeField] private Vector3 growthAmount;
     [SerializeField] private float scoreIncreaseAmount;
+    [SerializeField] private float adPowerUpTime;
     [SerializeField] private TMP_Text scoretext;
     [SerializeField] private ParticleSystem particleCollect;
-    [SerializeField] private float adPowerUpTime;
-    public float score = 0;
+
+    private float score;
     private Vector3 growedScale;
     private Transform _transform;
     private Rigidbody _rigidbody;
