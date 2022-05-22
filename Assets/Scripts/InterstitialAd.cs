@@ -65,7 +65,7 @@ namespace Unity.Ad.Interstýtýal
             Debug.Log("Initialization Failed: " + e.Message);
         }
 
-        void AdLoaded(object sender, EventArgs args)
+        public void AdLoaded(object sender, EventArgs args)
         {
             Debug.Log("Ad loaded");
         }
@@ -79,14 +79,19 @@ namespace Unity.Ad.Interstýtýal
         void AdShown(object sender, EventArgs args)
         {
             Debug.Log("Ad shown!");
+            Time.timeScale = 0;
+            SoundManager.Instance.PauseMusic();
         }
 
         void AdClosed(object sender, EventArgs e)
         {
             // Pre-load the next ad
-            ad.Load();
             Debug.Log("Ad has closed");
-            GameController.gameState = GameController.GameState.Started;
+
+            Time.timeScale = 1;
+            SoundManager.Instance.PlayMusic();
+            ad.Load();
+            GameManager.gameState = GameManager.GameState.Started;
         }
 
         void AdClicked(object sender, EventArgs e)
@@ -98,6 +103,8 @@ namespace Unity.Ad.Interstýtýal
         void AdFailedShow(object sender, ShowErrorEventArgs args)
         {
             Debug.Log(args.Message);
+            Time.timeScale = 1;
+            SoundManager.Instance.PlayMusic();
         }
 
         void ImpressionEvent(object sender, ImpressionEventArgs args)

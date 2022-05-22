@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Moving(InputAction.CallbackContext value)
     {
-        if (value.performed & GameController.gameState == GameController.GameState.Started)
+        if (value.performed & GameManager.gameState == GameManager.GameState.Started)
         {
             moveVal = value.ReadValue<Vector2>();
 

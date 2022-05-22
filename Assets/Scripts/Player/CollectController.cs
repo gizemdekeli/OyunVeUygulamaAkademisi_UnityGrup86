@@ -11,60 +11,61 @@ public class CollectController : MonoBehaviour
     [SerializeField] private Vector3 growthAmount;
     [SerializeField] private float scoreIncreaseAmount;
     [SerializeField] private float adPowerUpTime;
-    [SerializeField] private TMP_Text scoretext;
-    [SerializeField] private ParticleSystem particleCollect;
+    [SerializeField] private TMP_Text _scoretext;
+    [SerializeField] private ParticleSystem _particleCollect;
+    [SerializeField] private AudioClip[] _audioClips;
 
     private float score;
     private Vector3 growedScale;
     private Transform _transform;
-    private Rigidbody _rigidbody;
     private InterstýtýalAd _ad;
-
-    private void Awake()
-    {
-        _ad = new InterstýtýalAd();
-    }
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
         _transform = transform;
+        AdSetUp();
 
-        _ad.InitServices();
-        _ad.SetupAd();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tomato"))
         {
-            growedScale = _transform.localScale + growthAmount;
-            _transform.DOScale(growedScale, 0.2f);
             other.gameObject.SetActive(false);
+            growedScale = _transform.localScale + growthAmount;
+            _transform.DOScale(growedScale, 0.1f);
+
             score += scoreIncreaseAmount;
-            scoretext.text = score.ToString();
-            particleCollect.Play();
+            _scoretext.text = score.ToString();
+
+            SoundManager.Instance.PlaySoundEffect(_audioClips[Random.Range(0, _audioClips.Length)]);
+            _particleCollect.Play();
         }
         if (other.gameObject.CompareTag("Ad"))
         {
             other.gameObject.SetActive(false);
-            GameController.isShrinking = false;
+            GameManager.isShrinking = false;
             StartCoroutine(AdPowerUp());
         }
     }
 
     IEnumerator AdPowerUp()
     {
-        GameController.gameState = GameController.GameState.Paused;
+        GameManager.gameState = GameManager.GameState.Paused;
 
-        Time.timeScale = 0;
         _ad.ShowAd();
 
-        yield return new WaitWhile(() => GameController.gameState == GameController.GameState.Paused);
+        yield return new WaitWhile(() => GameManager.gameState == GameManager.GameState.Paused);
         Debug.Log("Reklam Bitti");
-        Time.timeScale = 1;
 
         yield return new WaitForSeconds(adPowerUpTime);
-        GameController.isShrinking = true;
+        GameManager.isShrinking = true;
+    }
+
+    private void AdSetUp()
+    {
+        _ad = new InterstýtýalAd();
+        _ad.InitServices();
+        _ad.SetupAd();
     }
 }
