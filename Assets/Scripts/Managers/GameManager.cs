@@ -25,10 +25,15 @@ namespace GameControllerNameSpace
         public static GameState gameState;
         public static bool isShrinking;
 
+        [Tooltip("Default: -9.81")]
+        [SerializeField] float gravityScale;
+
         private void Awake()
         {
             _rigidbody = _player.GetComponent<Rigidbody>();
             _playerTransform = _player.GetComponent<Transform>();
+
+            Physics.gravity = new Vector3(0, gravityScale, 0);
         }
         void Start()
         {
