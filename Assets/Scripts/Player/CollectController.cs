@@ -24,7 +24,6 @@ public class CollectController : MonoBehaviour
     {
         _transform = transform;
         AdSetUp();
-
     }
 
     private void OnTriggerEnter(Collider other)

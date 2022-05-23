@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace GameControllerNameSpace
 {
@@ -15,8 +17,10 @@ namespace GameControllerNameSpace
         [SerializeField] float shrinkFraction;
 
         [Header("Other")]
-        [SerializeField] GameObject _gameOverPanel;
+        [SerializeField] Image _gameOverPanel;
+        [SerializeField] Image _playPanel;
         [SerializeField] GameObject _player;
+        [SerializeField] Image _topPanel;
 
         Rigidbody _rigidbody;
         Transform _playerTransform;
@@ -37,8 +41,8 @@ namespace GameControllerNameSpace
         }
         void Start()
         {
+            Time.timeScale = 0;
             gameState = GameState.Paused;
-            StartCoroutine(StartGame());
         }
 
         private void FixedUpdate()
@@ -47,7 +51,7 @@ namespace GameControllerNameSpace
 
             if (gameState == GameState.Death)   // BU KISIM DÜZENLENÝP DAHA VERÝMLÝ HALE GETÝRÝLEBÝLÝR
             {
-                _gameOverPanel.SetActive(true);
+                _gameOverPanel.gameObject.SetActive(true);
                 _rigidbody.velocity = Vector3.zero;
             }
         }
@@ -66,16 +70,27 @@ namespace GameControllerNameSpace
             else if (_playerTransform.localScale.x < 0.1f)
             {
                 gameState = GameState.Paused;
-                _gameOverPanel.SetActive(true);
+                _gameOverPanel.gameObject.SetActive(true);
             }
         }
 
-        // Oyun baþladýktan 2 saniye sonra kontrol ve dönme baþlýyor. Play butonu eklenince kontrol butona baðlanacak.
-        // "IEnumerator StartGame()" yerine Butonun Play metodu geçecek.
+        public void Play()
+        {
+            StartCoroutine(StartGame());
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         IEnumerator StartGame()
         {
-            Debug.Log("Game starts in 3 seconds");
-            yield return new WaitForSeconds(3);
+            _topPanel.gameObject.SetActive(true);
+            _playPanel.gameObject.SetActive(false);
+            Debug.Log("Game starts in 1 seconds");
+            Time.timeScale = 1;
+            yield return new WaitForSeconds(1);
             gameState = GameState.Started;
             isShrinking = true;
         }
