@@ -102,7 +102,7 @@ Daily scrumlara verilen önemin artırılması
 
 - **Sprint board update**: Sprint board Ekran görüntüsü: 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/35369764/169852629-090c8d06-7dbb-4164-8f9c-e086d886d2b3.png" alt="Sprint board" height: "100"; width: "30";/>
+  <img src="https://user-images.githubusercontent.com/35369764/169856884-85f65cc2-8028-457e-95c3-ea2edda45f06.png" alt="Sprint board" height: "100"; width: "30";/>
 
 - **Ürün Durumu**: Ekran görüntüleri:
 <p align="center">
@@ -122,5 +122,11 @@ Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı. Kesin karar bir 
 - **Sprint Retrospective:**
 Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
 
-- **Ek Notlar:**
+### **Ek Notlar:**
 Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
+
+####  Dışarıdan temin edilen assetler: 
+
+-   [Meyve toplama sesi](https://opengameart.org/content/40-cc0-water-splash-slime-sfx)
+
+-   [Arka plan müziği](https://www.chosic.com/download-audio/25961/)
