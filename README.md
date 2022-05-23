@@ -80,3 +80,21 @@ Araştırma, fikir bulma ve geliştirmeye yönelik planlanan bu sprintte kararla
 - **Sprint Retrospective:**
 Takım içinde görev dağılımında güncellemeler yapıldı (scrum master ve product ownera geliştirme tarafında verilecek görevler kararlaştırıldı) 
 Daily scrumlara verilen önemin artırılması
+
+# Sprint 2
+
+- **Sprint Notları**: User storyler backloglara yerleştirildi ve kullanılan hazır paketlerin kaynakları notlar kısmına lşnk olarak yüklendi.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 120
+
+- **Puan tamamlama mantığı**: Toplam tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk sprintte hedeflenen 60 puan tamamlandı. İkinci spirintin ortaya bir prototip çıkarmayı hedeflemesi sebebiyle 120 puan verildi.
+
+- **Backlog Düzeni**: Backloglar spritnin sonunda sahne düzeni ve oyun akışıyla birlikte ortaya hedeflenen oyunun oynanabilir bir çıktısını almaya yönelik düzenlendi.
+
+- **Daily Scrum**: Yapılanlar ve destek istenen konularda discord ve whatsapp üzerinden iletişime geçildi ve bunu haricinde 2 toplantı yapıldı.
+
+- **Sprint Review**:
+Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı karar verilmesi bir sonraki sprinte bırakıldı. hedeflendiği gibi belirlenen bittiye yaklaşılan bir sprint oldu. Ortaya sahnesiyle ve kontrol sistemleri ve karakteriyle oynanabilir bir oyun konuldu. Planlandığı gibi reklam itemleri eklendi ancak itemlerde tasarım olarak değişiklik yapılması kararlaştırıldı.  Bir dahaki sprintte karakterlerin geliştirilebileceği konuşuldu ve yeni karakterlere karar verildi. UI konusunda tam anlamıyla bitti bir dahaki sprinte bırakıldı. Birkaç eklentiyle oyuncunun oyunun içinde gibi hissetmesini sağlayacak ve gerçekliği artıracak değişiklere karar verildi.
+
+- **Sprint Retrospective:**
+Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
