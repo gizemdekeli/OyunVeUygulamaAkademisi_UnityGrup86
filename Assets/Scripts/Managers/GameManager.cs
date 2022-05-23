@@ -21,7 +21,7 @@ namespace GameControllerNameSpace
         Rigidbody _rigidbody;
         Transform _playerTransform;
 
-        public enum GameState { Started, Paused }
+        public enum GameState { Started, Paused, Death }
         public static GameState gameState;
         public static bool isShrinking;
 
@@ -44,6 +44,12 @@ namespace GameControllerNameSpace
         private void FixedUpdate()
         {
             Roll();
+
+            if (gameState == GameState.Death)   // BU KISIM DÜZENLENÝP DAHA VERÝMLÝ HALE GETÝRÝLEBÝLÝR
+            {
+                _gameOverPanel.SetActive(true);
+                _rigidbody.velocity = Vector3.zero;
+            }
         }
 
         void Roll()

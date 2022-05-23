@@ -47,6 +47,12 @@ public class CollectController : MonoBehaviour
             GameManager.isShrinking = false;
             StartCoroutine(AdPowerUp());
         }
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            GameManager.gameState = GameManager.GameState.Death;
+            Debug.Log("Can gidecek veya oyun yeniden baþlayacak. Ayarlanmasý yapýlýr.");
+            // State'in durumuna Can gitti veya kaybetti vs. de eklenip state ona çevrilince otomatik GameOver çýkmasý saðlanabilir.
+        }
     }
 
     IEnumerator AdPowerUp()
