@@ -2,7 +2,7 @@
 Oyun ve Uygulama Akademisi Bootcamp Unity 86. Grup Oyun Projesi
 # **Takım İsmi**
 
-Full Fresh
+- **Full Fresh**
 
 <p>
 <img src="https://user-images.githubusercontent.com/35369764/169838617-443df828-0b3f-4dd4-8e92-ab968f42bca0.png" alt="In-Game Screenshot" width="250"; height: "250";/>
@@ -12,11 +12,11 @@ Full Fresh
 
 ## Takım Elemanları
 
-- Mina Elvan Tetik: Product Owner
-- Süeda Handan Dalkıran: Scrum Master
-- Gizem Dekeli: Team Member/Developer
-- Elif Yener: Team Member/Developer
-- Ertuğrul Baran: Team Member/Developer
+- **Mina Elvan Tetik:** Product Owner
+- **Süeda Handan Dalkıran:** Scrum Master
+- **Gizem Dekeli:** Team Member/Developer
+- **Elif Yener:** Team Member/Developer
+- **Ertuğrul Baran:** Team Member/Developer
 
 ## Ürün İsmi
 
@@ -123,3 +123,4 @@ Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı. Kesin karar bir 
 Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
 
 - **Ek Notlar:**
+Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
