@@ -125,8 +125,14 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 ### **Ek Notlar:**
 Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
 
+
 ####  Dışarıdan temin edilen assetler: 
-
+<details>
+  <summary>Liste için buraya tıklayabilirsiniz</summary>
+ 
 -   [Meyve toplama sesi](https://opengameart.org/content/40-cc0-water-splash-slime-sfx)
-
 -   [Arka plan müziği](https://www.chosic.com/download-audio/25961/)
+-   ...
+</details>
+
+
