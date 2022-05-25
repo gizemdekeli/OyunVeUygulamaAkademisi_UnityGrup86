@@ -1,18 +1,22 @@
-# OyunVeUygulamaAkademisi_UnityGrup86
+# Oyun ve Uygulama Akademisi | Bootcamp Projesi
 Oyun ve Uygulama Akademisi Bootcamp Unity 86. Grup Oyun Projesi
 # **Takım İsmi**
 
-Grup 86
+- **Full Fresh**
+
+<p>
+<img src="https://user-images.githubusercontent.com/35369764/169838617-443df828-0b3f-4dd4-8e92-ab968f42bca0.png" alt="In-Game Screenshot" width="250"; height: "250";/>
+</p>
 
 # Ürün İle İlgili Bilgiler
 
 ## Takım Elemanları
 
-- Mina Elvan Tetik: Product Owner
-- Süeda Handan Dalkıran: Scrum Master
-- Gizem Dekeli: Team Member/Developer
-- Elif Yener: Team Member/Developer
-- Ertuğrul Baran: Team Member/Developer
+- **Mina Elvan Tetik:** Product Owner
+- **Süeda Handan Dalkıran:** Scrum Master
+- **Gizem Dekeli:** Team Member/Developer
+- **Elif Yener:** Team Member/Developer
+- **Ertuğrul Baran:** Team Member/Developer
 
 ## Ürün İsmi
 
@@ -56,22 +60,21 @@ Mobil cihazlara erişim sağlayabilen herkese yönelik tasarlanmış bir oyun.
 
 - **Backlog Düzeni**: Backloglarımız daha çok projenin temeline (fikrin belirlenmesi,karakterlerin temel düzeyde belirlenmesi, projenin başlatılması) ve sprint sonuna görsel bir prototip çıkarma aracıyla düzenlendi.
 
-
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü bu sprintte tam anlamıyla yapılamadı ancak olabildiğince sık Discord ve WhatsApp üzerinden iletişime geçildi ve toplantılar düzenlendi.
 
    [Daily Scrum Görselleri / Word Belgesi](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/dailyscrum%20görselleri.docx)
  
 - **Sprint board update**: Sprint board Ekran görüntüsü: 
-
-  <img src="https://user-images.githubusercontent.com/35369764/167614024-85de3b36-04f5-48a9-82b3-93913b621546.png" alt="Sprint board" style="height: 100; width: 30;"/>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/35369764/167614024-85de3b36-04f5-48a9-82b3-93913b621546.png" alt="Sprint board" height: "100"; width: "30";/>
 
 - **Ürün Durumu**: Ekran görüntüleri:
 <p align="center">
-  <img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/Project%20ScreenShot.jpg?raw=true" alt="Project Screenshot" style="height: 500; width: 250;"/>
+  <img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/Project%20ScreenShot.jpg?raw=true" alt="Project Screenshot" height: "100"; width: "30";/>
 <p align="center">
 <br>
 <p align="center">
-<img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/In-Game%20Screenshot.png?raw=true" alt="In-Game Screenshot" style="height: 75; width: 125;"/>
+<img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%201%20Documents/In-Game%20Screenshot.png?raw=true" alt="In-Game Screenshot" height: "10"; width: "20";/>
 </p>
 
 - **Sprint Review**: 
@@ -83,7 +86,9 @@ Daily scrumlara verilen önemin artırılması
 
 # Sprint 2
 
-- **Sprint Notları**: User storyler backloglara yerleştirildi ve kullanılan hazır paketlerin kaynakları notlar kısmına lşnk olarak yüklendi.
+- **Sprint Notları**: User storyler backloglara yerleştirildi ve kullanılan hazır paketlerin kaynakları Ek Notlar kısmına link olarak yüklendi.
+
+   [Sprint Notları / Miro](https://miro.com/app/board/uXjVO2HRMaA=/?share_link_id=361031596989)
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
@@ -93,8 +98,41 @@ Daily scrumlara verilen önemin artırılması
 
 - **Daily Scrum**: Yapılanlar ve destek istenen konularda discord ve whatsapp üzerinden iletişime geçildi ve bunu haricinde 2 toplantı yapıldı.
 
+   [Daily Scrum Görselleri / Word Belgesi](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%202%20Documents/daily%20scrums%20sprint%202.docx)
+
+- **Sprint board update**: Sprint board Ekran görüntüsü: 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/35369764/169856884-85f65cc2-8028-457e-95c3-ea2edda45f06.png" alt="Sprint board" height: "100"; width: "30";/>
+
+- **Ürün Durumu**: Ekran görüntüleri:
+<p align="center">
+  <img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%202%20Documents/Project%20Screenshot.png?raw=true" alt="Project Screenshot" height: "100"; width: "30";/>
+<p align="center">
+<br>
+<p align="center">
+<img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%202%20Documents/In-Game%20Screenshot1.png?raw=true" alt="In-Game Screenshot" height: "10"; width: "20";/>
+</p>
+<p align="center">
+<img src="https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%202%20Documents/In-Game%20Screenshot2.png?raw=true" alt="In-Game Screenshot 2" height: "10"; width: "20";/>
+</p>
+
 - **Sprint Review**:
-Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı karar verilmesi bir sonraki sprinte bırakıldı. hedeflendiği gibi belirlenen bittiye yaklaşılan bir sprint oldu. Ortaya sahnesiyle ve kontrol sistemleri ve karakteriyle oynanabilir bir oyun konuldu. Planlandığı gibi reklam itemleri eklendi ancak itemlerde tasarım olarak değişiklik yapılması kararlaştırıldı.  Bir dahaki sprintte karakterlerin geliştirilebileceği konuşuldu ve yeni karakterlere karar verildi. UI genel hatlarıyla tamamlandı. Birkaç eklentiyle oyuncunun oyunun içinde gibi hissetmesini sağlayacak ve gerçekliği artıracak değişiklere karar verildi.
+Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı. Kesin karar bir sonraki sprinte bırakıldı. hedeflendiği gibi belirlenen bittiye yaklaşılan bir sprint oldu. Ortaya sahnesiyle, kontrol sistemleri ve karakteriyle oynanabilir bir oyun konuldu. Planlandığı gibi reklam itemleri eklendi ancak itemlerde tasarım olarak değişiklik yapılması kararlaştırıldı. Bir dahaki sprintte karakterlerin geliştirilebileceği konuşuldu ve yeni karakterlere karar verildi. UI genel hatlarıyla tamamlandı. Birkaç eklentiyle oyuncunun oyunun içinde gibi hissetmesini sağlayacak ve gerçekliği artıracak değişiklere karar verildi.
 
 - **Sprint Retrospective:**
 Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
+
+### **Ek Notlar:**
+Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
+
+
+####  Dışarıdan temin edilen assetler: 
+<details>
+  <summary>Liste için buraya tıklayabilirsiniz</summary>
+ 
+-   [Meyve toplama sesi](https://opengameart.org/content/40-cc0-water-splash-slime-sfx)
+-   [Arka plan müziği](https://www.chosic.com/download-audio/25961/)
+-   ...
+</details>
+
+
