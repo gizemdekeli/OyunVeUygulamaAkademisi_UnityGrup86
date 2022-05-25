@@ -1774,8 +1774,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282335053
-  m_fontColor: {r: 0.3018868, g: 0.24635102, b: 0.24635102, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1854,7 +1854,7 @@ GameObject:
   - component: {fileID: 509003170}
   - component: {fileID: 509003169}
   m_Layer: 5
-  m_Name: f
+  m_Name: TopPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6766,7 +6766,7 @@ MonoBehaviour:
   rollspeed: 6
   maxRollSpeed: 20
   shrinkFraction: 700
-  _gameOverPanel: {fileID: 528534223}
+  _gameOverPanel: {fileID: 528534225}
   _playPanel: {fileID: 1539967044}
   _player: {fileID: 919132147702554516}
   _topPanel: {fileID: 509003169}

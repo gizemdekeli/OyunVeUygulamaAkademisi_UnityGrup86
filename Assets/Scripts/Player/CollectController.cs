@@ -31,11 +31,10 @@ public class CollectController : MonoBehaviour
         if (other.gameObject.CompareTag("Tomato"))
         {
             other.gameObject.SetActive(false);
-            growedScale = _transform.localScale + growthAmount;
-            _transform.DOScale(growedScale, 0.1f);
+            GrowUp();
 
             score += scoreIncreaseAmount;
-            _scoretext.text = score.ToString();
+            ScoreToText();
 
             SoundManager.Instance.PlaySoundEffect(_audioClips[Random.Range(0, _audioClips.Length)]);
             _particleCollect.Play();
@@ -54,6 +53,8 @@ public class CollectController : MonoBehaviour
         }
     }
 
+
+
     IEnumerator AdPowerUp()
     {
         GameManager.gameState = GameManager.GameState.Paused;
@@ -65,6 +66,19 @@ public class CollectController : MonoBehaviour
 
         yield return new WaitForSeconds(adPowerUpTime);
         GameManager.isShrinking = true;
+    }
+
+    private void ScoreToText()
+    {
+        _scoretext.text = score.ToString();
+        _scoretext.DOColor(Color.red, .2f).OnComplete(() => _scoretext.DOColor(Color.black, .2f));
+        _scoretext.transform.DOScale(Vector3.one * 1.5f, .1f).OnComplete(() => _scoretext.transform.DOScale(Vector3.one, .1f));
+    }
+
+    private void GrowUp()
+    {
+        growedScale = _transform.localScale + growthAmount;
+        _transform.DOScale(growedScale, 0.1f);
     }
 
     private void AdSetUp()
