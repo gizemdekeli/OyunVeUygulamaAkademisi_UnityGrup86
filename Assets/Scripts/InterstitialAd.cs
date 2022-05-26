@@ -8,7 +8,7 @@ namespace Unity.Ad.Interstýtýal
 {
     public class InterstýtýalAd
     {
-        IInterstitialAd ad;
+        public IInterstitialAd ad;
         string adUnitId = "Interstitial_Android";
         string gameId = "4760609";
 
@@ -79,17 +79,12 @@ namespace Unity.Ad.Interstýtýal
         void AdShown(object sender, EventArgs args)
         {
             Debug.Log("Ad shown!");
-            Time.timeScale = 0;
-            SoundManager.Instance.PauseMusic();
         }
 
         void AdClosed(object sender, EventArgs e)
         {
             // Pre-load the next ad
             Debug.Log("Ad has closed");
-
-            Time.timeScale = 1;
-            SoundManager.Instance.PlayMusic();
             ad.Load();
             GameManager.gameState = GameManager.GameState.Started;
         }
@@ -103,8 +98,6 @@ namespace Unity.Ad.Interstýtýal
         void AdFailedShow(object sender, ShowErrorEventArgs args)
         {
             Debug.Log(args.Message);
-            Time.timeScale = 1;
-            SoundManager.Instance.PlayMusic();
         }
 
         void ImpressionEvent(object sender, ImpressionEventArgs args)
@@ -112,6 +105,5 @@ namespace Unity.Ad.Interstýtýal
             var impressionData = args.ImpressionData != null ? JsonUtility.ToJson(args.ImpressionData, true) : "null";
             Debug.Log("Impression event from ad unit id " + args.AdUnitId + " " + impressionData);
         }
-
     }
 }

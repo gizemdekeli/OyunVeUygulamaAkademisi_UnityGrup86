@@ -12,16 +12,10 @@ public class PlayerControl : MonoBehaviour
     float currentX;
     float moveFactor = 100;
 
-    Transform _transform;
-    Rigidbody _rigidbody;
+    [SerializeField] Transform _transform;
+    [SerializeField] Rigidbody _rigidbody;
 
     Vector2 moveVal;
-
-    private void Start()
-    {
-        _transform = GetComponent<Transform>();
-        _rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void FixedUpdate()
     {

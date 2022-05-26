@@ -5,28 +5,28 @@ using DG.Tweening;
 using TMPro;
 using GameControllerNameSpace;
 using Unity.Ad.Interstýtýal;
+using Unity.Services.Mediation;
 
 public class CollectController : MonoBehaviour
 {
-    [SerializeField] private Vector3 growthAmount;
-    [SerializeField] private float scoreIncreaseAmount;
-    [SerializeField] private float adPowerUpTime;
-    [SerializeField] private TMP_Text _scoretext;
-    [SerializeField] private ParticleSystem _particleCollect;
-    [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] Vector3 growthAmount;
+    [SerializeField] float scoreIncreaseAmount;
+    [SerializeField] float adPowerUpTime;
+    [SerializeField] TMP_Text _scoretext;
+    [SerializeField] ParticleSystem _particleCollect;
+    [SerializeField] AudioClip[] _audioClips;
+    [SerializeField] Transform _transform;
 
-    private float score;
-    private Vector3 growedScale;
-    private Transform _transform;
-    private InterstýtýalAd _ad;
+    float score;
+    Vector3 growedScale;
+    InterstýtýalAd _ad;
 
-    private void Start()
+    void Start()
     {
-        _transform = transform;
         AdSetUp();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tomato"))
         {
@@ -57,31 +57,38 @@ public class CollectController : MonoBehaviour
 
     IEnumerator AdPowerUp()
     {
-        GameManager.gameState = GameManager.GameState.Paused;
 
-        _ad.ShowAd();
+        if (_ad.ad.AdState==AdState.Loaded)
+        {
+            GameManager.gameState = GameManager.GameState.Paused;
+            _ad.ShowAd();
+            Time.timeScale = 0;
+            SoundManager.Instance.PauseMusic();
+        }
 
         yield return new WaitWhile(() => GameManager.gameState == GameManager.GameState.Paused);
         Debug.Log("Reklam Bitti");
+        Time.timeScale = 1;
+        SoundManager.Instance.PlayMusic();
 
         yield return new WaitForSeconds(adPowerUpTime);
         GameManager.isShrinking = true;
     }
 
-    private void ScoreToText()
+    void ScoreToText()
     {
         _scoretext.text = score.ToString();
         _scoretext.DOColor(Color.red, .2f).OnComplete(() => _scoretext.DOColor(Color.black, .2f));
         _scoretext.transform.DOScale(Vector3.one * 1.5f, .1f).OnComplete(() => _scoretext.transform.DOScale(Vector3.one, .1f));
     }
 
-    private void GrowUp()
+    void GrowUp()
     {
         growedScale = _transform.localScale + growthAmount;
         _transform.DOScale(growedScale, 0.1f);
     }
 
-    private void AdSetUp()
+    void AdSetUp()
     {
         _ad = new InterstýtýalAd();
         _ad.InitServices();

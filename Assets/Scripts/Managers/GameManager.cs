@@ -16,14 +16,8 @@ namespace GameControllerNameSpace
         [Tooltip("High Value -> Slower Shrinking \nRecommended 700")]
         [SerializeField] float shrinkFraction;
 
-        [Header("Other")]
-        [SerializeField] Image _gameOverPanel;
-        [SerializeField] Image _playPanel;
-        [SerializeField] GameObject _player;
-        [SerializeField] Image _topPanel;
-
-        Rigidbody _rigidbody;
-        Transform _playerTransform;
+        [SerializeField] Rigidbody _rigidbody;
+        [SerializeField] Transform _playerTransform;
 
         public enum GameState { Started, Paused, Death }
         public static GameState gameState;
@@ -32,12 +26,17 @@ namespace GameControllerNameSpace
         [Tooltip("Default: -9.81")]
         [SerializeField] float gravityScale;
 
+        [Header("Definitions")]
+        [SerializeField] Image _gameOverPanel;
+        [SerializeField] Image _playPanel;
+        [SerializeField] GameObject _player;
+        [SerializeField] Image _topPanel;
+
+
         private void Awake()
         {
-            _rigidbody = _player.GetComponent<Rigidbody>();
-            _playerTransform = _player.GetComponent<Transform>();
-
             Physics.gravity = new Vector3(0, gravityScale, 0);
+            Application.targetFrameRate = 30;   //Default FrameRate for mobile
         }
         void Start()
         {
