@@ -28,7 +28,7 @@ public class CollectController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Tomato"))
+        if (other.gameObject.CompareTag("CollectableFruit"))
         {
             other.gameObject.SetActive(false);
             GrowUp();
