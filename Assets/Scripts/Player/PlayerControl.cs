@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
         _transform.position = new Vector3(currentX, _transform.position.y, _transform.position.z);
     }
 
-    public void Moving(InputAction.CallbackContext value)
+    public void Move(InputAction.CallbackContext value)
     {
         if (value.performed & GameManager.gameState == GameManager.GameState.Started)
         {

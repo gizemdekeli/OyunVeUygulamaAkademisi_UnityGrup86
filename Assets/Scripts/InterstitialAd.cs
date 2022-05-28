@@ -12,6 +12,7 @@ namespace Unity.Ad.Interstýtýal
         string adUnitId = "Interstitial_Android";
         string gameId = "4760609";
 
+        
         public async void InitServices()
         {
             try
@@ -27,7 +28,7 @@ namespace Unity.Ad.Interstýtýal
                 InitializationFailed(e);
             }
         }
-
+        
         public void SetupAd()
         {
             //Create

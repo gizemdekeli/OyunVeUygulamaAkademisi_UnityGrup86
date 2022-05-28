@@ -12,10 +12,10 @@ public class CollectController : MonoBehaviour
     [SerializeField] Vector3 growthAmount;
     [SerializeField] float scoreIncreaseAmount;
     [SerializeField] float adPowerUpTime;
-    [SerializeField] TMP_Text _scoretext;
     [SerializeField] ParticleSystem _particleCollect;
-    [SerializeField] AudioClip[] _audioClips;
+    [SerializeField] TMP_Text _scoretext;
     [SerializeField] Transform _transform;
+    [SerializeField] AudioClip[] _audioClips;
 
     float score;
     Vector3 growedScale;
@@ -48,16 +48,14 @@ public class CollectController : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             GameManager.gameState = GameManager.GameState.Death;
-            Debug.Log("Can gidecek veya oyun yeniden baþlayacak. Ayarlanmasý yapýlýr.");
+            GameManager.Instance.Death();
+            Debug.Log("Devam için Reklam önerisi gösterilecek veya oyun yeniden baþlayacak.");
             // State'in durumuna Can gitti veya kaybetti vs. de eklenip state ona çevrilince otomatik GameOver çýkmasý saðlanabilir.
         }
     }
 
-
-
     IEnumerator AdPowerUp()
     {
-
         if (_ad.ad.AdState==AdState.Loaded)
         {
             GameManager.gameState = GameManager.GameState.Paused;

@@ -479,7 +479,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
+  - {fileID: 2100000, guid: 6428329c88f4d6444b36ef4ef5496b69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1365,7 +1365,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
+  - {fileID: 2100000, guid: 6428329c88f4d6444b36ef4ef5496b69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1912,7 +1912,7 @@ PrefabInstance:
     - target: {fileID: 5409648099542590422, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f7ffe77d10ce4543bdb032bdec9edb8, type: 2}
     - target: {fileID: 5409648099581334500, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3381,7 +3381,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
+  - {fileID: 2100000, guid: 6428329c88f4d6444b36ef4ef5496b69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5213,7 +5213,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5344,7 +5344,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 129
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6046,7 +6046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
+  - {fileID: 2100000, guid: 6428329c88f4d6444b36ef4ef5496b69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7333,11 +7333,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4682439854211663904, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
   m_PrefabInstance: {fileID: 1884092155}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1888994034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5965805377454358350, guid: 73f8705930669c44ea580aaef913d46b, type: 3}
-  m_PrefabInstance: {fileID: 7651768075360147689}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1947881762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8135,8 +8130,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 919132147702554517}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: Moving
+        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8170,18 +8165,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1176049527}
     m_Modifications:
-    - target: {fileID: 274176212718611894, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 688343408821774036, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4032198200961766789, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4682439854211663904, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8230,10 +8213,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable
       objectReference: {fileID: 0}
-    - target: {fileID: 4682439854211663911, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405c370d4bee25c4eab8e215c24be739, type: 3}
 --- !u!1001 &5409648098018780429
@@ -8243,10 +8222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1070406155}
     m_Modifications:
-    - target: {fileID: 5409648098826318898, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5409648099542590416, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8295,22 +8270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ad
       objectReference: {fileID: 0}
-    - target: {fileID: 5409648099542590420, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5409648099542590422, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f0c281eb6a892084cb883749d734f287, type: 2}
     - target: {fileID: 5409648099581334500, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
-    - target: {fileID: 5409648099581334504, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ffc1f0d819c344d868c36d9f715aac, type: 3}
 --- !u!1001 &6950234859335552294
@@ -8472,7 +8435,7 @@ PrefabInstance:
     - target: {fileID: 7417960026724616063, guid: 73f8705930669c44ea580aaef913d46b, type: 3}
       propertyPath: testGameObject
       value: 
-      objectReference: {fileID: 1888994034}
+      objectReference: {fileID: 0}
     - target: {fileID: 7417960026724616063, guid: 73f8705930669c44ea580aaef913d46b, type: 3}
       propertyPath: particleCollect
       value: 

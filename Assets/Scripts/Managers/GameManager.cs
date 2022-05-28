@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
 
 namespace GameControllerNameSpace
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance = null;
         [Header("Roll Controls")]
         [SerializeField] float rollspeed;
         [SerializeField] float maxRollSpeed;
@@ -35,9 +38,9 @@ namespace GameControllerNameSpace
 
         private void Awake()
         {
-            Physics.gravity = new Vector3(0, gravityScale, 0);
-            Application.targetFrameRate = 30;   //Default FrameRate for mobile
+            Setup();
         }
+
         void Start()
         {
             Time.timeScale = 0;
@@ -48,11 +51,15 @@ namespace GameControllerNameSpace
         {
             Roll();
 
-            if (gameState == GameState.Death)   // BU KISIM DÜZENLENÝP DAHA VERÝMLÝ HALE GETÝRÝLEBÝLÝR
-            {
-                _gameOverPanel.gameObject.SetActive(true);
-                _rigidbody.velocity = Vector3.zero;
-            }
+        }
+
+        public void Death()
+        {
+            _gameOverPanel.gameObject.SetActive(true);
+            gameState = GameState.Paused;
+
+            //_rigidbody.velocity = Vector3.zero;
+            _rigidbody.freezeRotation = true;
         }
 
         void Roll()
@@ -68,8 +75,7 @@ namespace GameControllerNameSpace
             }
             else if (_playerTransform.localScale.x < 0.1f)
             {
-                gameState = GameState.Paused;
-                _gameOverPanel.gameObject.SetActive(true);
+                Death();
             }
         }
 
@@ -80,7 +86,27 @@ namespace GameControllerNameSpace
 
         public void Restart()
         {
+            StopAllCoroutines();
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            // For Custom event | Unity Analytics
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            AnalyticsService.Instance.CustomData("restartClicked", parameters);
+        }
+
+        private void Setup()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            Physics.gravity = new Vector3(0, gravityScale, 0);
+            Application.targetFrameRate = 30;   //Default FrameRate for mobile
         }
 
         IEnumerator StartGame()

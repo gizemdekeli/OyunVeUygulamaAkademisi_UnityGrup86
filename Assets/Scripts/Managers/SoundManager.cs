@@ -13,7 +13,6 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -26,7 +25,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayMusic()
     {
-        _musicSource.Play();
+        _musicSource.UnPause();
     }
     public void PauseMusic()
     {

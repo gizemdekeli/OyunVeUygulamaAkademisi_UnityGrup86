@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ad
-  - Tomato
   - Obstacle
+  - CollectableFruit
   layers:
   - Default
   - TransparentFX
