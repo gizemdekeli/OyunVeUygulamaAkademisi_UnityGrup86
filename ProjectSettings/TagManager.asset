@@ -7,6 +7,7 @@ TagManager:
   - Ad
   - Obstacle
   - CollectableFruit
+  - Grater
   layers:
   - Default
   - TransparentFX

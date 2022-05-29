@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Unity.Services.Core;
 using Unity.Services.Analytics;
 
 namespace GameControllerNameSpace
@@ -29,11 +29,14 @@ namespace GameControllerNameSpace
         [Tooltip("Default: -9.81")]
         [SerializeField] float gravityScale;
 
-        [Header("Definitions")]
+        [Header("Designations")]
         [SerializeField] Image _gameOverPanel;
         [SerializeField] Image _playPanel;
         [SerializeField] GameObject _player;
         [SerializeField] Image _topPanel;
+
+        [HideInInspector]
+        public Vector3 shrinkAmount;
 
 
         private void Awake()
@@ -45,12 +48,12 @@ namespace GameControllerNameSpace
         {
             Time.timeScale = 0;
             gameState = GameState.Paused;
+            shrinkAmount = Vector3.one / shrinkFraction;
         }
 
         private void FixedUpdate()
         {
             Roll();
-
         }
 
         public void Death()
@@ -70,7 +73,8 @@ namespace GameControllerNameSpace
                 _rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, maxRollSpeed);
                 if (isShrinking)
                 {
-                    _playerTransform.localScale -= Vector3.one / shrinkFraction;
+                    Vector3 tempScale = _playerTransform.localScale -= shrinkAmount; ;
+                    _playerTransform.localScale = tempScale;
                 }
             }
             else if (_playerTransform.localScale.x < 0.1f)

@@ -10,8 +10,9 @@ using Unity.Services.Mediation;
 public class CollectController : MonoBehaviour
 {
     [SerializeField] Vector3 growthAmount;
-    [SerializeField] float scoreIncreaseAmount;
-    [SerializeField] float adPowerUpTime;
+    [SerializeField] float scoreIncreaseAmount, adPowerUpTime, graterShrinkFraction;
+
+    [Header("Designations")]
     [SerializeField] ParticleSystem _particleCollect;
     [SerializeField] TMP_Text _scoretext;
     [SerializeField] Transform _transform;
@@ -19,11 +20,15 @@ public class CollectController : MonoBehaviour
 
     float score;
     Vector3 growedScale;
+    Vector3 shrinkTemp;
+    Vector3 graterShrinkVector;
     InterstýtýalAd _ad;
+
 
     void Start()
     {
         AdSetUp();
+        graterShrinkVector = new Vector3(graterShrinkFraction / 700, graterShrinkFraction / 700, graterShrinkFraction / 700);
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +47,6 @@ public class CollectController : MonoBehaviour
         if (other.gameObject.CompareTag("Ad"))
         {
             other.gameObject.SetActive(false);
-            GameManager.isShrinking = false;
             StartCoroutine(AdPowerUp());
         }
         if (other.gameObject.CompareTag("Obstacle"))
@@ -52,11 +56,27 @@ public class CollectController : MonoBehaviour
             Debug.Log("Devam için Reklam önerisi gösterilecek veya oyun yeniden baþlayacak.");
             // State'in durumuna Can gitti veya kaybetti vs. de eklenip state ona çevrilince otomatik GameOver çýkmasý saðlanabilir.
         }
+        if (other.gameObject.CompareTag("Grater"))
+        {
+            if (GameManager.isShrinking)
+            {
+                shrinkTemp = GameManager.Instance.shrinkAmount;
+                GameManager.Instance.shrinkAmount += graterShrinkVector;
+            }
+        }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Grater"))
+        {
+            GameManager.Instance.shrinkAmount = shrinkTemp;
+        }
+    }
+
 
     IEnumerator AdPowerUp()
     {
-        if (_ad.ad.AdState==AdState.Loaded)
+        if (_ad.ad.AdState == AdState.Loaded)
         {
             GameManager.gameState = GameManager.GameState.Paused;
             _ad.ShowAd();
