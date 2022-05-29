@@ -15,12 +15,15 @@ public class CollectController : MonoBehaviour
     [Header("Designations")]
     [SerializeField] ParticleSystem _particleCollect;
     [SerializeField] TMP_Text _scoretext;
+    [SerializeField] GameObject _timerPanel;
+    [SerializeField] TMP_Text _timerText;
     [SerializeField] Transform _transform;
+    [SerializeField] Color _timerGoColor;
     [SerializeField] AudioClip[] _audioClips;
 
     float score;
     Vector3 growedScale;
-    Vector3 shrinkTemp;
+    Vector3 tempShrink;
     Vector3 graterShrinkVector;
     InterstýtýalAd _ad;
 
@@ -60,7 +63,7 @@ public class CollectController : MonoBehaviour
         {
             if (GameManager.isShrinking)
             {
-                shrinkTemp = GameManager.Instance.shrinkAmount;
+                tempShrink = GameManager.Instance.shrinkAmount;
                 GameManager.Instance.shrinkAmount += graterShrinkVector;
             }
         }
@@ -69,7 +72,7 @@ public class CollectController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Grater"))
         {
-            GameManager.Instance.shrinkAmount = shrinkTemp;
+            GameManager.Instance.shrinkAmount = tempShrink;
         }
     }
 
@@ -84,10 +87,37 @@ public class CollectController : MonoBehaviour
             SoundManager.Instance.PauseMusic();
         }
 
-        yield return new WaitWhile(() => GameManager.gameState == GameManager.GameState.Paused);
+        yield return new WaitWhile(() => _ad.ad.AdState == AdState.Showing);
+
         Debug.Log("Reklam Bitti");
         Time.timeScale = 1;
         SoundManager.Instance.PlayMusic();
+
+        #region AdCooldown
+        Vector3 tempVelocity = new Vector3(0, 0, GameManager.Instance._rigidbody.velocity.z);
+        GameManager.Instance._rigidbody.freezeRotation = true;
+        GameManager.Instance._rigidbody.velocity = Vector3.zero;
+
+        _timerPanel.SetActive(true);
+        _timerText.transform.DOScale(5f, 0.3f).SetEase(Ease.OutBounce).SetLoops(-1, LoopType.Restart);
+        for (int i = 3; i >= 1; i--)
+        {
+            _timerText.text = i.ToString();
+            yield return new WaitForSeconds(1);
+        }
+        _timerText.text = "GO!";
+        _timerText.color = _timerGoColor;
+        _timerText.transform.DOScale(5.5f, 1f);
+        _timerText.DOColor(new Color(0, 0, 0, 0), 1f);
+
+        yield return new WaitForSeconds(0.85f);
+
+        GameManager.Instance._rigidbody.freezeRotation = false;
+        GameManager.Instance._rigidbody.velocity = tempVelocity;
+        _timerPanel.SetActive(false);
+        GameManager.gameState = GameManager.GameState.Started;
+        #endregion
+
 
         yield return new WaitForSeconds(adPowerUpTime);
         GameManager.isShrinking = true;

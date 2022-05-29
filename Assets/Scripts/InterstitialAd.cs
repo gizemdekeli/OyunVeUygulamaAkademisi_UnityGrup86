@@ -12,7 +12,6 @@ namespace Unity.Ad.Interstýtýal
         string adUnitId = "Interstitial_Android";
         string gameId = "4760609";
 
-        
         public async void InitServices()
         {
             try
@@ -87,7 +86,6 @@ namespace Unity.Ad.Interstýtýal
             // Pre-load the next ad
             Debug.Log("Ad has closed");
             ad.Load();
-            GameManager.gameState = GameManager.GameState.Started;
         }
 
         void AdClicked(object sender, EventArgs e)

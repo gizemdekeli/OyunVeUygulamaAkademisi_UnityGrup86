@@ -33,7 +33,6 @@ public class PlayerControl : MonoBehaviour
         if (value.performed & GameManager.gameState == GameManager.GameState.Started)
         {
             moveVal = value.ReadValue<Vector2>();
-
             _rigidbody.AddForce(new Vector3(moveVal.x * moveSpeed / moveFactor, 0, 0), ForceMode.Impulse);
         }
     }

@@ -19,11 +19,12 @@ namespace GameControllerNameSpace
         [Tooltip("High Value -> Slower Shrinking \nRecommended 700")]
         [SerializeField] float shrinkFraction;
 
-        [SerializeField] Rigidbody _rigidbody;
+        [SerializeField] public Rigidbody _rigidbody;
         [SerializeField] Transform _playerTransform;
 
         public enum GameState { Started, Paused, Death }
         public static GameState gameState;
+
         public static bool isShrinking;
 
         [Tooltip("Default: -9.81")]
@@ -61,7 +62,6 @@ namespace GameControllerNameSpace
             _gameOverPanel.gameObject.SetActive(true);
             gameState = GameState.Paused;
 
-            //_rigidbody.velocity = Vector3.zero;
             _rigidbody.freezeRotation = true;
         }
 
@@ -74,7 +74,7 @@ namespace GameControllerNameSpace
                 if (isShrinking)
                 {
                     Vector3 tempScale = _playerTransform.localScale -= shrinkAmount; ;
-                    _playerTransform.localScale = tempScale;
+                    _playerTransform.DOScale(tempScale,0.1f);
                 }
             }
             else if (_playerTransform.localScale.x < 0.1f)

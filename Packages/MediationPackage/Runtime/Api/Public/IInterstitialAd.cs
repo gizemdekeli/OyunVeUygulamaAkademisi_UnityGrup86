@@ -40,7 +40,7 @@ namespace Unity.Services.Mediation
         /// <summary>
         /// Get the current state of the ad.
         /// </summary>
-        AdState AdState { get; }
+        public AdState AdState { get; }
 
         /// <summary>
         /// Get the ad unit id set during construction.
