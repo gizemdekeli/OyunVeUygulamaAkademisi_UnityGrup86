@@ -6,6 +6,7 @@ using TMPro;
 using GameControllerNameSpace;
 using Unity.Ad.Interstýtýal;
 using Unity.Services.Mediation;
+using UnityEngine.UI;
 
 public class CollectController : MonoBehaviour
 {
@@ -19,19 +20,23 @@ public class CollectController : MonoBehaviour
     [SerializeField] TMP_Text _timerText;
     [SerializeField] Transform _transform;
     [SerializeField] Color _timerGoColor;
+    [SerializeField] Color _timerNumberColor;
+    [SerializeField] Image _adPowerUpImage;
     [SerializeField] AudioClip[] _audioClips;
 
     float score;
     Vector3 growedScale;
     Vector3 tempShrink;
     Vector3 graterShrinkVector;
+    Vector3 tempTimerScale;
     InterstýtýalAd _ad;
-
+    float cooldown;
 
     void Start()
     {
         AdSetUp();
         graterShrinkVector = new Vector3(graterShrinkFraction / 700, graterShrinkFraction / 700, graterShrinkFraction / 700);
+        tempTimerScale = _timerText.transform.localScale;
     }
 
     void OnTriggerEnter(Collider other)
@@ -99,7 +104,7 @@ public class CollectController : MonoBehaviour
         GameManager.Instance._rigidbody.velocity = Vector3.zero;
 
         _timerPanel.SetActive(true);
-        _timerText.transform.DOScale(5f, 0.3f).SetEase(Ease.OutBounce).SetLoops(-1, LoopType.Restart);
+        _timerText.transform.DOScale(5f, 0.3f).SetLoops(10, LoopType.Restart);
         for (int i = 3; i >= 1; i--)
         {
             _timerText.text = i.ToString();
@@ -111,16 +116,40 @@ public class CollectController : MonoBehaviour
         _timerText.DOColor(new Color(0, 0, 0, 0), 1f);
 
         yield return new WaitForSeconds(0.85f);
+        #endregion
 
         GameManager.Instance._rigidbody.freezeRotation = false;
         GameManager.Instance._rigidbody.velocity = tempVelocity;
-        _timerPanel.SetActive(false);
         GameManager.gameState = GameManager.GameState.Started;
-        #endregion
+        _timerPanel.SetActive(false);
 
-
+        StartCoroutine(AdPowerUpCooldown());
+        _adPowerUpImage.gameObject.SetActive(true);
+        _adPowerUpImage.transform.DOScale(1.1f, 0.3f).SetLoops(10, LoopType.Yoyo);
         yield return new WaitForSeconds(adPowerUpTime);
+        _adPowerUpImage.gameObject.SetActive(false);
         GameManager.isShrinking = true;
+
+        _timerText.transform.localScale = tempTimerScale;
+        _timerText.color = _timerNumberColor;
+    }
+
+    IEnumerator AdPowerUpCooldown()
+    {
+        cooldown = 0;
+
+        while (true)
+        {
+            cooldown += Time.deltaTime;
+            _adPowerUpImage.fillAmount = cooldown / adPowerUpTime;
+
+            if (cooldown >= adPowerUpTime)
+            {
+                StopCoroutine(AdPowerUpCooldown());
+            }
+
+            yield return null;
+        }
     }
 
     void ScoreToText()

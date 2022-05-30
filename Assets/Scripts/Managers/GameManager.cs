@@ -34,7 +34,7 @@ namespace GameControllerNameSpace
         [SerializeField] Image _gameOverPanel;
         [SerializeField] Image _playPanel;
         [SerializeField] GameObject _player;
-        [SerializeField] Image _topPanel;
+        [SerializeField] CanvasRenderer _topPanel;
 
         [HideInInspector]
         public Vector3 shrinkAmount;
@@ -71,11 +71,10 @@ namespace GameControllerNameSpace
             {
                 _rigidbody.AddForce(rollspeed * Vector3.forward, ForceMode.Acceleration);
                 _rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, maxRollSpeed);
-                if (isShrinking)
-                {
-                    Vector3 tempScale = _playerTransform.localScale -= shrinkAmount; ;
-                    _playerTransform.DOScale(tempScale,0.1f);
-                }
+
+                Vector3 tempScale = _playerTransform.localScale -= shrinkAmount; ;
+                _playerTransform.DOScale(tempScale, 0.1f);
+
             }
             else if (_playerTransform.localScale.x < 0.1f)
             {
@@ -115,10 +114,12 @@ namespace GameControllerNameSpace
 
         IEnumerator StartGame()
         {
-            _topPanel.gameObject.SetActive(true);
             _playPanel.gameObject.SetActive(false);
-            Debug.Log("Game starts in 1 seconds");
+            _topPanel.gameObject.SetActive(true);
+            _topPanel.transform.DOLocalMoveY(_topPanel.transform.localPosition.y - 300, 0.7f).SetEase(Ease.OutBack);
+
             Time.timeScale = 1;
+            Debug.Log("Game starts in 1 seconds");
             yield return new WaitForSeconds(1);
             gameState = GameState.Started;
             isShrinking = true;
