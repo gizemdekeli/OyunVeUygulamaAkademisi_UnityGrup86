@@ -18,6 +18,7 @@ public class AdManager : MonoBehaviour
     [SerializeField] Color _timerGoColor;
     [SerializeField] Color _timerNumberColor;
     [SerializeField] Image _adPowerUpImage;
+    [SerializeField] GameObject _shield;
     [SerializeField] float adPowerUpTime;
 
     [HideInInspector]
@@ -44,6 +45,7 @@ public class AdManager : MonoBehaviour
         yield return new WaitWhile(() => GameManager.Instance.gameState == GameManager.GameState.Paused);
 
         Debug.Log("Reklam Bitti");
+        _shield.SetActive(true);
         Time.timeScale = 1;
         SoundManager.Instance.PlayMusic();
 
@@ -80,6 +82,7 @@ public class AdManager : MonoBehaviour
 
             _timerText.transform.localScale = tempTimerScale;
             _timerText.color = _timerNumberColor;
+            _shield.SetActive(false);
         }
     }
 
