@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Unity.Services.Analytics;
 
-namespace GameControllerNameSpace
+namespace GameManagerNamespace
 {
     public class GameManager : MonoBehaviour
     {
@@ -22,8 +22,8 @@ namespace GameControllerNameSpace
         [SerializeField] public Rigidbody _rigidbody;
         [SerializeField] Transform _playerTransform;
 
-        public enum GameState { Started, Paused, Death }
-        public static GameState gameState;
+        public enum GameState { Started, Paused, Dead, Finished }
+        public GameState gameState;
 
         public static bool isShrinking;
 
@@ -33,7 +33,7 @@ namespace GameControllerNameSpace
         [Header("Designations")]
         [SerializeField] Image _gameOverPanel;
         [SerializeField] Image _playPanel;
-        [SerializeField] GameObject _player;
+        [SerializeField] Transform _blender;
         [SerializeField] CanvasRenderer _topPanel;
 
         [HideInInspector]
@@ -57,13 +57,39 @@ namespace GameControllerNameSpace
             Roll();
         }
 
-        public void Death()
+        #region GameState Methods
+        public void Started()
         {
+            gameState = GameState.Started;
+            _rigidbody.freezeRotation = false;
+            _rigidbody.velocity = AdManager.Instance.tempVelocity;
+            PlayerControl.Instance.canMove = true;
+        }
+
+        public void Paused()
+        {
+            gameState = GameState.Paused;
+            Time.timeScale = 0;
+            PlayerControl.Instance.canMove = false;
+            SoundManager.Instance.PauseMusic();
+        }
+
+        public void Dead()
+        {
+            gameState = GameState.Dead;
             _gameOverPanel.gameObject.SetActive(true);
             gameState = GameState.Paused;
 
             _rigidbody.freezeRotation = true;
         }
+
+        public void Finished()
+        {
+            gameState = GameState.Finished;
+
+            _rigidbody.AddForce((_blender.position - _playerTransform.position) / 2, ForceMode.VelocityChange);    ///______________________________________________________________________________________
+        }
+        #endregion
 
         void Roll()
         {
@@ -78,7 +104,7 @@ namespace GameControllerNameSpace
             }
             else if (_playerTransform.localScale.x < 0.1f)
             {
-                Death();
+                Dead();
             }
         }
 
@@ -90,12 +116,32 @@ namespace GameControllerNameSpace
         public void Restart()
         {
             StopAllCoroutines();
-
+            DOTween.KillAll();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-            // For Custom event | Unity Analytics
+            // Unity Analytics | Custom event
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             AnalyticsService.Instance.CustomData("restartClicked", parameters);
+        }
+
+        public void NextLevel()
+        {
+            StopAllCoroutines();
+            DOTween.KillAll();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        IEnumerator StartGame()
+        {
+            _playPanel.gameObject.SetActive(false);
+            _topPanel.gameObject.SetActive(true);
+            _topPanel.transform.DOLocalMoveY(_topPanel.transform.localPosition.y - 300, 0.7f).SetEase(Ease.OutBack);
+
+            Time.timeScale = 1;
+            Debug.Log("Game starts in 1 seconds");
+            yield return new WaitForSeconds(1);
+            gameState = GameState.Started;
+            isShrinking = true;
         }
 
         private void Setup()
@@ -112,17 +158,6 @@ namespace GameControllerNameSpace
             Application.targetFrameRate = 30;   //Default FrameRate for mobile
         }
 
-        IEnumerator StartGame()
-        {
-            _playPanel.gameObject.SetActive(false);
-            _topPanel.gameObject.SetActive(true);
-            _topPanel.transform.DOLocalMoveY(_topPanel.transform.localPosition.y - 300, 0.7f).SetEase(Ease.OutBack);
 
-            Time.timeScale = 1;
-            Debug.Log("Game starts in 1 seconds");
-            yield return new WaitForSeconds(1);
-            gameState = GameState.Started;
-            isShrinking = true;
-        }
     }
 }

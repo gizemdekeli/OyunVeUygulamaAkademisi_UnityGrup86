@@ -19,7 +19,7 @@ namespace Unity.Services.Mediation
             {
                 if (s_Instance == null)
                 {
-                    throw new InvalidOperationException($"OTOMATÝK YENÝDEN BAÐLANIYOR.SORUN GÖRÜNMÜYOR.MediationService has not been initialized. " +
+                    throw new InvalidOperationException($"MediationService has not been initialized. " +
                         $"Please consider calling {nameof(MediationService.Initialize)} before accessing {nameof(Instance)}");
                 }
                 return s_Instance;

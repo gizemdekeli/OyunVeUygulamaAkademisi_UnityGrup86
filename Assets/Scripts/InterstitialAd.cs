@@ -1,9 +1,8 @@
+using GameManagerNamespace;
 using System;
 using Unity.Services.Core;
 using Unity.Services.Mediation;
 using UnityEngine;
-using GameControllerNameSpace;
-
 namespace Unity.Ad.Interstýtýal
 {
     public class InterstýtýalAd
@@ -86,6 +85,8 @@ namespace Unity.Ad.Interstýtýal
             // Pre-load the next ad
             Debug.Log("Ad has closed");
             ad.Load();
+
+            GameManager.Instance.gameState = GameManager.GameState.Started;
         }
 
         void AdClicked(object sender, EventArgs e)

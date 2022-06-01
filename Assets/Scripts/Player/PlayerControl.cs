@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameControllerNameSpace;
+using GameManagerNamespace;
 using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
+    public static PlayerControl Instance = null;
+
     [SerializeField] float moveSpeed;
     [SerializeField] float moveLimitX;
 
     float currentX;
     float moveFactor = 100;
+    public bool canMove = true;
 
     [SerializeField] Transform _transform;
     [SerializeField] Rigidbody _rigidbody;
@@ -30,10 +33,22 @@ public class PlayerControl : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
-        if (value.performed & GameManager.gameState == GameManager.GameState.Started)
+        if (value.performed & GameManager.Instance.gameState == GameManager.GameState.Started && canMove)
         {
             moveVal = value.ReadValue<Vector2>();
             _rigidbody.AddForce(new Vector3(moveVal.x * moveSpeed / moveFactor, 0, 0), ForceMode.Impulse);
+        }
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
