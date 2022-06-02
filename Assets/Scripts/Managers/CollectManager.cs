@@ -15,7 +15,9 @@ public class CollectManager : MonoBehaviour
     [SerializeField] ParticleSystem _particleCollect;
     [SerializeField] TMP_Text _scoretext;
     [SerializeField] Transform _transform;
-    [SerializeField] AudioClip[] _audioClips;
+    [SerializeField] AudioClip[] _audioClips; 
+    [SerializeField] GameObject _timeline;
+
     Material _juice;
 
     [HideInInspector]
@@ -75,6 +77,7 @@ public class CollectManager : MonoBehaviour
         if (other.gameObject.CompareTag("Finish"))
         {
             GameManager.Instance.Finished();
+            _timeline.SetActive(true);
         }
     }
 

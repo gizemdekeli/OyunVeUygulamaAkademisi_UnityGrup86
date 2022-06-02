@@ -31,4 +31,8 @@ public class SoundManager : MonoBehaviour
     {
         _musicSource.Pause();
     }
+    public void SetMusicVolume(float volume)
+    {
+        _musicSource.volume = volume;
+    }
 }

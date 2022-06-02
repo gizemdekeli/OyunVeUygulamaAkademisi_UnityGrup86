@@ -115,7 +115,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - fillAmount: -1
+    - fillAmount: -0.82
     m_Colors:
     - Color_15027528250244289fa21db70b2ce3b9: {r: 0.754717, g: 0.22713362, b: 0.11035956, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
