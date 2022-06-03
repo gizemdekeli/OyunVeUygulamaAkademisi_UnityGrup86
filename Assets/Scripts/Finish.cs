@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using Unity.Services.Analytics;
 using TMPro;
+using GameManagerNamespace;
 
 public class Finish : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && GameManager.Instance.gameState != GameManager.GameState.Dead)
         {
             other.gameObject.SetActive(false);
             _topRestartButton.gameObject.SetActive(false);
@@ -40,15 +41,13 @@ public class Finish : MonoBehaviour
 
             _scoreText.text = $"{_collectManager.collectedFruitCount} / {_collectManager.totalFruitCount}";
 
-            Fill();
-
             // Unity Analytics | Custom event
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             AnalyticsService.Instance.CustomData("finishedLevel", parameters);
         }
     }
 
-    private void Fill()
+    public void Fill()
     {
         tempFillAmount = _juice.material.GetFloat("fillAmount");
         _juice.material.SetFloat("fillAmount", -1);

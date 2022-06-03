@@ -78,9 +78,7 @@ namespace GameManagerNamespace
         {
             gameState = GameState.Dead;
             _gameOverPanel.gameObject.SetActive(true);
-            gameState = GameState.Paused;
-
-            _rigidbody.freezeRotation = true;
+            Time.timeScale = 0.5f;
         }
 
         public void Finished()
@@ -93,7 +91,7 @@ namespace GameManagerNamespace
 
         void Roll()
         {
-            if (gameState == GameState.Started && _playerTransform.localScale.x >= 0.1f)
+            if (gameState == GameState.Started && _playerTransform.localScale.x >= 0.1f && PlayerControl.Instance.canMove)
             {
                 _rigidbody.AddForce(rollspeed * Vector3.forward, ForceMode.Acceleration);
                 _rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, maxRollSpeed);

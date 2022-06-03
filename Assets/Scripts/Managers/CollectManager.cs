@@ -15,7 +15,7 @@ public class CollectManager : MonoBehaviour
     [SerializeField] ParticleSystem _particleCollect;
     [SerializeField] TMP_Text _scoretext;
     [SerializeField] Transform _transform;
-    [SerializeField] AudioClip[] _audioClips; 
+    [SerializeField] AudioClip[] _audioClips;
     [SerializeField] GameObject _timeline;
 
     Material _juice;
@@ -37,47 +37,50 @@ public class CollectManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("CollectableFruit"))
+        if (GameManager.Instance.gameState == GameManager.GameState.Started)
         {
-            other.gameObject.SetActive(false);
-            GrowUp();
-            collectedFruitCount++;
-            score += scoreIncreaseAmount;
-            ScoreToText();
-            _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount") + (2 / totalFruitCount));
-            SoundManager.Instance.PlaySoundEffect(_audioClips[Random.Range(0, _audioClips.Length)]);
-            _particleCollect.Play();
-        }
-
-
-        if (other.gameObject.CompareTag("Ad"))
-        {
-            other.gameObject.SetActive(false);
-            StartCoroutine(AdManager.Instance.AdPowerUpCollect());
-        }
-
-
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            GameManager.Instance.Dead();
-            Debug.Log("Devam için Reklam izlenip devam edilecek veya oyun yeniden baþlayacak.");
-        }
-
-
-        if (other.gameObject.CompareTag("Grater"))
-        {
-            if (GameManager.isShrinking)
+            if (other.gameObject.CompareTag("CollectableFruit"))
             {
-                tempShrink = GameManager.Instance.shrinkAmount;
-                GameManager.Instance.shrinkAmount += graterShrinkVector;
+                other.gameObject.SetActive(false);
+                GrowUp();
+                collectedFruitCount++;
+                score += scoreIncreaseAmount;
+                ScoreToText();
+                _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount") + (2 / totalFruitCount));
+                SoundManager.Instance.PlaySoundEffect(_audioClips[Random.Range(0, _audioClips.Length)]);
+                _particleCollect.Play();
             }
-        }
 
 
-        if (other.gameObject.CompareTag("Finish"))
-        {
-            GameManager.Instance.Finished();
-            _timeline.SetActive(true);
+            if (other.gameObject.CompareTag("Ad"))
+            {
+                other.gameObject.SetActive(false);
+                StartCoroutine(AdManager.Instance.AdPowerUpCollect());
+            }
+
+
+            if (other.gameObject.CompareTag("Obstacle"))
+            {
+                GameManager.Instance.Dead();
+                Debug.Log("Devam için Reklam izlenip devam edilecek veya oyun yeniden baþlayacak.");
+            }
+
+
+            if (other.gameObject.CompareTag("Grater"))
+            {
+                if (GameManager.isShrinking)
+                {
+                    tempShrink = GameManager.Instance.shrinkAmount;
+                    GameManager.Instance.shrinkAmount += graterShrinkVector;
+                }
+            }
+
+
+            if (other.gameObject.CompareTag("Finish"))
+            {
+                GameManager.Instance.Finished();
+                _timeline.SetActive(true);
+            }
         }
     }
 

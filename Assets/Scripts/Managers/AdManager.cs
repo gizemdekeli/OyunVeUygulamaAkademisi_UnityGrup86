@@ -66,6 +66,7 @@ public class AdManager : MonoBehaviour
         _timerText.transform.DOScale(5.5f, 1f);
         _timerText.DOColor(new Color(0, 0, 0, 0), 1f);
         yield return new WaitForSeconds(0.85f);
+
         #endregion
 
         GameManager.Instance.Started();
@@ -73,6 +74,7 @@ public class AdManager : MonoBehaviour
 
         if (GameManager.Instance.gameState == GameManager.GameState.Started)
         {
+            GameManager.isShrinking = false;
             StartCoroutine(AdPowerUpCooldown());
             _adPowerUpImage.gameObject.SetActive(true);
             _adPowerUpImage.transform.DOScale(1.1f, 0.3f).SetLoops(10, LoopType.Yoyo);
