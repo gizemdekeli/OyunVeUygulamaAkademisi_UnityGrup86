@@ -20,11 +20,14 @@ namespace GameManagerNamespace
         [SerializeField] float shrinkFraction;
 
         [SerializeField] public Rigidbody _rigidbody;
-        [SerializeField] Transform _playerTransform;
+        Transform _playerTransform;
 
         public enum GameState { Started, Paused, Dead, Finished }
         public GameState gameState;
 
+        public int currentFruitID = 0;
+
+        [SerializeField] public FruitTypes[] fruitTypes;
         public static bool isShrinking;
 
         [Tooltip("Default: -9.81")]
@@ -35,6 +38,7 @@ namespace GameManagerNamespace
         [SerializeField] Image _playPanel;
         [SerializeField] Transform _blender;
         [SerializeField] CanvasRenderer _topPanel;
+
 
         [HideInInspector]
         public Vector3 shrinkAmount;
@@ -50,6 +54,7 @@ namespace GameManagerNamespace
             Time.timeScale = 0;
             gameState = GameState.Paused;
             shrinkAmount = Vector3.one / shrinkFraction;
+            _playerTransform = _rigidbody.gameObject.transform;
         }
 
         private void FixedUpdate()
@@ -85,7 +90,7 @@ namespace GameManagerNamespace
         {
             gameState = GameState.Finished;
 
-            _rigidbody.AddForce((_blender.position - _playerTransform.position) / 2, ForceMode.VelocityChange);    ///______________________________________________________________________________________
+            _rigidbody.AddForce((_blender.position - _playerTransform.position) / 2, ForceMode.VelocityChange);
         }
         #endregion
 

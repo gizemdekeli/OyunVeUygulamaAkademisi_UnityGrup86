@@ -11,7 +11,7 @@ public class Finish : MonoBehaviour
 {
     public static Finish Instance = null;
 
-    [SerializeField] ParticleSystem _finishParticles;
+    [SerializeField] public ParticleSystem _finishParticles;
     [SerializeField] Image _finishPanel;
     [SerializeField] Button _topRestartButton;
     [SerializeField] TMP_Text _scoreText;

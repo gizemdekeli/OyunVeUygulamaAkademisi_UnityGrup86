@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - CollectableFruit
   - Grater
+  - TransitionArea
   layers:
   - Default
   - TransparentFX

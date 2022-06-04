@@ -3,6 +3,8 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using GameManagerNamespace;
+using System.Collections.Generic;
+using static UnityEngine.ParticleSystem;
 
 public class CollectManager : MonoBehaviour
 {
@@ -15,8 +17,12 @@ public class CollectManager : MonoBehaviour
     [SerializeField] ParticleSystem _particleCollect;
     [SerializeField] TMP_Text _scoretext;
     [SerializeField] Transform _transform;
-    [SerializeField] AudioClip[] _audioClips;
+    [SerializeField] AudioClip[] _collectClips;
+    [SerializeField] AudioClip _transitionClip;
     [SerializeField] GameObject _timeline;
+
+    MeshFilter _meshFilter;
+    MeshRenderer _meshRenderer;
 
     Material _juice;
 
@@ -27,11 +33,15 @@ public class CollectManager : MonoBehaviour
     Vector3 growedScale;
     Vector3 tempShrink;
     Vector3 graterShrinkVector;
+    MinMaxGradient currentFruitGradient;
 
 
     void Start()
     {
+
         _juice = Finish.Instance._juice.material;
+        _meshFilter = GetComponent<MeshFilter>();
+        _meshRenderer = GetComponent<MeshRenderer>();
         graterShrinkVector = new Vector3(graterShrinkFraction / 700, graterShrinkFraction / 700, graterShrinkFraction / 700);
     }
 
@@ -47,7 +57,13 @@ public class CollectManager : MonoBehaviour
                 score += scoreIncreaseAmount;
                 ScoreToText();
                 _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount") + (2 / totalFruitCount));
-                SoundManager.Instance.PlaySoundEffect(_audioClips[Random.Range(0, _audioClips.Length)]);
+                SoundManager.Instance.PlaySoundEffect(_collectClips[Random.Range(0, _collectClips.Length)]);
+
+                currentFruitGradient = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._gradient;
+
+                var main = _particleCollect.main;
+                main.startColor = currentFruitGradient;
+
                 _particleCollect.Play();
             }
 
@@ -56,6 +72,18 @@ public class CollectManager : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 StartCoroutine(AdManager.Instance.AdPowerUpCollect());
+            }
+
+
+            if (other.gameObject.CompareTag("TransitionArea"))
+            {
+                SoundManager.Instance.PlaySoundEffect(_transitionClip);
+                ParticleSystem transitionParticle = Instantiate(Finish.Instance._finishParticles, _transform.position, Quaternion.identity);
+                transitionParticle.Play();
+                GameManager.Instance.currentFruitID++;
+                _meshFilter.mesh = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._mesh;
+                _meshRenderer.materials = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._materials;
+
             }
 
 
@@ -112,7 +140,7 @@ public class CollectManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = new CollectManager();
+            Instance = this;
         }
         else Destroy(gameObject);
     }
