@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 using GameManagerNamespace;
 using System.Collections.Generic;
 using static UnityEngine.ParticleSystem;
@@ -20,6 +21,8 @@ public class CollectManager : MonoBehaviour
     [SerializeField] AudioClip[] _collectClips;
     [SerializeField] AudioClip _transitionClip;
     [SerializeField] GameObject _timeline;
+    [SerializeField] Image _oldScoreImage;
+    [SerializeField] Sprite _newScoreImage;
 
     MeshFilter _meshFilter;
     MeshRenderer _meshRenderer;
@@ -83,6 +86,7 @@ public class CollectManager : MonoBehaviour
                 GameManager.Instance.currentFruitID++;
                 _meshFilter.mesh = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._mesh;
                 _meshRenderer.materials = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._materials;
+                _oldScoreImage.sprite = _newScoreImage;
 
             }
 
@@ -90,7 +94,7 @@ public class CollectManager : MonoBehaviour
             if (other.gameObject.CompareTag("Obstacle"))
             {
                 GameManager.Instance.Dead();
-                Debug.Log("Devam için Reklam izlenip devam edilecek veya oyun yeniden baþlayacak.");
+                Debug.Log("Devam iï¿½in Reklam izlenip devam edilecek veya oyun yeniden baï¿½layacak.");
             }
 
 
