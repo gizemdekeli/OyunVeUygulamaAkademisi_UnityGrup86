@@ -191,6 +191,5 @@ namespace GameManagerNamespace
             Application.targetFrameRate = 30;   //Default FrameRate for mobile
         }
 
-
     }
 }
