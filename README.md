@@ -135,6 +135,12 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 
 - **Sprint board update**: Sprint board Ekran görüntüsü:
 
+- **Ürün Durumu**: Ekran görüntüleri:
+![image](https://user-images.githubusercontent.com/104429912/172237600-e53cfa79-339b-4210-892b-bedceeb08de3.png)
+![image](https://user-images.githubusercontent.com/104429912/172237692-8236756d-8a87-4e26-babb-2b3a9464cb57.png)
+![image](https://user-images.githubusercontent.com/104429912/172237846-1450153a-f699-401e-b3e5-d19a60b1d79e.png)
+
+
 - **Sprint Review**:
 Bir önceki sprintte kullanıcıya daha keyifli ve gerçekçi bir deneyim yaşatma hedefiyle eklemesi planlanan detaylar( gece gündüz, animasyonlar gibi)  eklendi. Reklamların yerlerinde düzenlemeler yapıldı. oyunun planlandığı gibi ilk iki seviyesi tamamlandı. Logoya karar verildi. Sahnenin renklerinde oynama isteğini artırması hedeflenerek değişiklikler yapıldı. Oyun 10 kişilik bir gruba test ettirildi ve kullanıcı deneyimine dayalı alınan geri dönüşlerle değişiklikler yapıldı. oyun geliştirilmeye devam edilirse neler yapılabileceği (gelecek seviyeler ve satın alınabilir ögelerle oyunun zenginleştirmesi vb.) konuşuldu birkaçına zamanın durumuna göre backloglar da yer verildi.
 
