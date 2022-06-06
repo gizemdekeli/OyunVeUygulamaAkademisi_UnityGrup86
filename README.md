@@ -123,6 +123,23 @@ Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı. Kesin karar bir 
 Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
 
 # Sprint 3
+- **Sprint Notları**: Projenin başında hazırlanan ürün belgesi yapılan değişikliklere göre yeniden düzenlendi.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 120
+
+- **Puan tamamlama mantığı**:Toplam tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bir önceki sprintlerde hedeflenen puanlar tamamlandı. Geriye kalan 120 puan bu sprinte verildi. Vaktin durumuna göre yapılabilir olarak eklenen ekstra backloglara puan atanmadı.
+
+- **Backlog Düzeni**: Oyunun hedeflenen bittiye ulaşmasını sağlayacak şekilde backloglar düzenlendi.
+
+- **Daily Scrum**: Discord ve whatsapp üzerinden iletişime geçildi ve bunların dışında 4 adet toplantı yapıldı.
+
+- **Sprint board update**: Sprint board Ekran görüntüsü:
+
+- **Sprint Review**:
+Bir önceki sprintte kullanıcıya daha keyifli ve gerçekçi bir deneyim yaşatma hedefiyle eklemesi planlanan detaylar( gece gündüz, animasyonlar gibi)  eklendi. Reklamların yerlerinde düzenlemeler yapıldı. oyunun planlandığı gibi ilk iki seviyesi tamamlandı. Logoya karar verildi. Sahnenin renklerinde oynama isteğini artırması hedeflenerek değişiklikler yapıldı. Oyun 10 kişilik bir gruba test ettirildi ve kullanıcı deneyimine dayalı alınan geri dönüşlerle değişiklikler yapıldı. oyun geliştirilmeye devam edilirse neler yapılabileceği (gelecek seviyeler ve satın alınabilir ögelerle oyunun zenginleştirmesi vb.) konuşuldu birkaçına zamanın durumuna göre backloglar da yer verildi.
+
+- **Sprint Retrospective:**
+Bir önceki sprintlerden kalanlar ve belirlenen hedeflerin yerine getirildiği verimli bir sprint oldu.  oyun tanıtım videosu için görev dağılımı yapıldı. Ürün belgesinde oyunumuzun son haline göre değişikler yapıldı.  Önceki, sprintlerde olduğu gibi toplantı notları ve backlog puanları miroya eklendi.
 
 ### **Ek Notlar:**
 Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
