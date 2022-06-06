@@ -72,6 +72,7 @@ namespace GameManagerNamespace
             _rigidbody.freezeRotation = false;
             _rigidbody.velocity = AdManager.Instance.tempVelocity;
             PlayerControl.Instance.canMove = true;
+            _rigidbody.isKinematic = false;
         }
 
         public void Paused()
@@ -84,9 +85,14 @@ namespace GameManagerNamespace
 
         public void Dead()
         {
+            if (AdManager.Instance._ad.ad.AdState == AdState.Loaded)
+            {
+                Paused();
+                AdManager.Instance._ad.ShowAd();
+            }
             gameState = GameState.Dead;
             _gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0.5f;
+            _rigidbody.isKinematic = true;
             SoundManager.Instance.PauseMusic();
             SoundManager.Instance.PlaySoundEffect(_gameOverClip);
         }
@@ -139,11 +145,22 @@ namespace GameManagerNamespace
 
             if (AdManager.Instance._ad.ad.AdState == AdState.Loaded)
             {
-                Instance.Paused();
+                Paused();
                 AdManager.Instance._ad.ShowAd();
             }
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        public void Continue()
+        {
+            if (AdManager.Instance._ad.ad.AdState == AdState.Loaded)
+            {
+                Paused();
+                AdManager.Instance._ad.ShowAd();
+            }
+            _gameOverPanel.gameObject.SetActive(false);
+            StartCoroutine(AdManager.Instance.AdPowerUpCollect());
         }
 
         IEnumerator StartGame()
@@ -157,6 +174,7 @@ namespace GameManagerNamespace
             yield return new WaitForSeconds(1);
             gameState = GameState.Started;
             isShrinking = true;
+            _rigidbody.isKinematic = false;
         }
 
         private void Setup()

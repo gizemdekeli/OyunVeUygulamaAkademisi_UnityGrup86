@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 7674351596926666324, guid: bd03b904c5a3f8c488e4cfe113af2ae9, type: 3}
   _materials:
-  - {fileID: 2100000, guid: 68924b38198388a479f79c97bbf16937, type: 2}
+  - {fileID: 2100000, guid: ed6a2c7f366562d40b54045267a74b89, type: 2}
   - {fileID: 2100000, guid: ce8113c1389a80344a24c5faa6d6ef34, type: 2}
   - {fileID: 2100000, guid: 93438dffef65a46438ebc15a3efbc392, type: 2}
   _gradient:

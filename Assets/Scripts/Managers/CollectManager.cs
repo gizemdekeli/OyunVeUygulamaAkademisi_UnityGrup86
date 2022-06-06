@@ -102,7 +102,7 @@ public class CollectManager : MonoBehaviour
             if (other.gameObject.CompareTag("Obstacle"))
             {
                 GameManager.Instance.Dead();
-                Debug.Log("Devam için Reklam izlenip devam edilecek veya oyun yeniden baþlayacak.");
+                other.gameObject.SetActive(false);
             }
 
 

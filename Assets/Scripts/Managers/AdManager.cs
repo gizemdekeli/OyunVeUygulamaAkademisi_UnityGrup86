@@ -55,7 +55,7 @@ public class AdManager : MonoBehaviour
 
         #region AdCooldown
         _timerPanel.gameObject.SetActive(true);
-        _timerText.transform.DOScale(5f, 0.3f).SetLoops(10, LoopType.Restart);
+        _timerText.transform.DOScale(3f, 0.3f).SetLoops(10, LoopType.Restart);
         SoundManager.Instance.PlaySoundEffect(_countdownSound);
         for (int i = 3; i >= 1; i--)
         {
@@ -64,7 +64,7 @@ public class AdManager : MonoBehaviour
         }
         _timerText.text = "GO!";
         _timerText.color = _timerGoColor;
-        _timerText.transform.DOScale(5.5f, 1f);
+        _timerText.transform.DOScale(4f, 1f);
         _timerText.DOColor(new Color(0, 0, 0, 0), 1f);
         yield return new WaitForSeconds(0.85f);
 
@@ -82,6 +82,7 @@ public class AdManager : MonoBehaviour
             yield return new WaitForSeconds(adPowerUpTime);
             _adPowerUpImage.gameObject.SetActive(false);
             GameManager.isShrinking = true;
+            GameManager.Instance._rigidbody.isKinematic = false;
 
             _timerText.transform.localScale = tempTimerScale;
             _timerText.color = _timerNumberColor;

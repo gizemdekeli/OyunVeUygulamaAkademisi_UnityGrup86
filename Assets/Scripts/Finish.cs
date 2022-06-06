@@ -58,7 +58,7 @@ public class Finish : MonoBehaviour
             {
                 _juice.material.SetFloat("fillAmount", fill);
                 Debug.Log(fruitPercent);
-            }).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.3f).SetEase(Ease.OutBack));
+            }).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.7f).SetEase(Ease.OutBack));
         }
 
         SoundManager.Instance.PlaySoundEffect(_mixerSound);
