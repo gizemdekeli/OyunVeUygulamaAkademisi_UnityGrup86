@@ -124,6 +124,8 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 # Sprint 3
 - **Sprint Notları**: Projenin başında hazırlanan ürün belgesi yapılan değişikliklere göre yeniden düzenlendi.
 
+   [Sprint Notları / Miro](https://miro.com/app/board/uXjVO2HRMaA=/?share_link_id=361031596989)
+
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
 - **Puan tamamlama mantığı**:Toplam tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bir önceki sprintlerde hedeflenen puanlar tamamlandı. Geriye kalan 120 puan bu sprinte verildi. Vaktin durumuna göre yapılabilir olarak eklenen ekstra backloglara puan atanmadı.
