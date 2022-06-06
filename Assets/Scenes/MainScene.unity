@@ -10513,6 +10513,7 @@ MonoBehaviour:
   _gameOverClip: {fileID: 8300000, guid: fc663cfe95112f84cb632a838c5385ca, type: 3}
   _blender: {fileID: 1462968439}
   _topPanel: {fileID: 509003170}
+  _learn: {fileID: 1488354694}
   shrinkAmount: {x: 0, y: 0, z: 0}
 --- !u!4 &1966748490
 Transform:
