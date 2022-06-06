@@ -124,6 +124,8 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 # Sprint 3
 - **Sprint Notları**: Projenin başında hazırlanan ürün belgesi yapılan değişikliklere göre yeniden düzenlendi.
 
+   [Sprint Notları / Miro](https://miro.com/app/board/uXjVO2HRMaA=/?share_link_id=361031596989)
+
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
 - **Puan tamamlama mantığı**:Toplam tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bir önceki sprintlerde hedeflenen puanlar tamamlandı. Geriye kalan 120 puan bu sprinte verildi. Vaktin durumuna göre yapılabilir olarak eklenen ekstra backloglara puan atanmadı.
@@ -132,6 +134,7 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 
 - **Daily Scrum**: Discord ve whatsapp üzerinden iletişime geçildi ve bunların dışında 4 adet toplantı yapıldı.
 
+   [Daily Scrum Görselleri / Word Belgesi](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%203%20Documents/Daily%20Scrums%20Sprint%203.docx)
 
 - **Sprint board update**: Sprint board Ekran görüntüsü:
 
@@ -157,7 +160,6 @@ Bir önceki sprintte kullanıcıya daha keyifli ve gerçekçi bir deneyim yaşat
 Bir önceki sprintlerden kalanlar ve belirlenen hedeflerin yerine getirildiği verimli bir sprint oldu.  oyun tanıtım videosu için görev dağılımı yapıldı. Ürün belgesinde oyunumuzun son haline göre değişikler yapıldı.  Önceki, sprintlerde olduğu gibi toplantı notları ve backlog puanları miroya eklendi.
 
 ### **Ek Notlar:**
-Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
 
 
 ####  Dışarıdan temin edilen assetler: 
