@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Unity.Services.Analytics;
+using Unity.Services.Mediation;
 
 namespace GameManagerNamespace
 {
@@ -37,6 +38,7 @@ namespace GameManagerNamespace
         [Header("Designations")]
         [SerializeField] Image _gameOverPanel;
         [SerializeField] Image _playPanel;
+        [SerializeField] AudioClip _gameOverClip;
         [SerializeField] Transform _blender;
         [SerializeField] CanvasRenderer _topPanel;
 
@@ -85,6 +87,8 @@ namespace GameManagerNamespace
             gameState = GameState.Dead;
             _gameOverPanel.gameObject.SetActive(true);
             Time.timeScale = 0.5f;
+            SoundManager.Instance.PauseMusic();
+            SoundManager.Instance.PlaySoundEffect(_gameOverClip);
         }
 
         public void Finished()
@@ -132,6 +136,13 @@ namespace GameManagerNamespace
         {
             StopAllCoroutines();
             DOTween.KillAll();
+
+            if (AdManager.Instance._ad.ad.AdState == AdState.Loaded)
+            {
+                Instance.Paused();
+                AdManager.Instance._ad.ShowAd();
+            }
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 

@@ -19,10 +19,11 @@ public class Finish : MonoBehaviour
     [SerializeField] CollectManager _collectManager;
     [SerializeField] AudioClip _mixerSound;
     [SerializeField] AudioClip _collectSound;
+    [SerializeField] Color _fruitColor;
 
-    float tempFillAmount;
+    [SerializeField] AudioSource _musicSource;
+
     float fill = -1;
-    float volume;
     List<float> collectedFruits = new List<float>();
 
     private void OnTriggerEnter(Collider other)
@@ -33,10 +34,8 @@ public class Finish : MonoBehaviour
             _topRestartButton.gameObject.SetActive(false);
             SoundManager.Instance.PlaySoundEffect(_collectSound);
 
-            DOTween.To(() => volume, x => volume = x, 0.2f, 7).OnUpdate(() =>
-            {
-                SoundManager.Instance.SetMusicVolume(volume);
-            });
+            _musicSource.DOFade(0.3f, 7);
+
             _finishParticles.Play();
 
             _scoreText.text = $"{_collectManager.collectedFruitCount} / {_collectManager.totalFruitCount}";
@@ -49,14 +48,6 @@ public class Finish : MonoBehaviour
 
     public void Fill()
     {
-        //tempFillAmount = _juice.material.GetFloat("fillAmount");
-        //_juice.material.SetFloat("fillAmount", -1);
-
-        //DOTween.To(() => fill, x => fill = x, tempFillAmount, 5).OnUpdate(() =>
-        //{
-        //    _juice.material.SetFloat("fillAmount", fill);
-        //}).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.3f).SetEase(Ease.OutBack));
-
         collectedFruits = CollectManager.Instance.collectedFruits;
         foreach (var fruitCount in collectedFruits)
         {
@@ -71,7 +62,7 @@ public class Finish : MonoBehaviour
         }
 
         SoundManager.Instance.PlaySoundEffect(_mixerSound);
-        _juice.material.DOColor(new Color(1, 0.23f, 0, 1), 2);
+        _juice.material.DOColor(_fruitColor, 2);
     }
 
     private void Awake()

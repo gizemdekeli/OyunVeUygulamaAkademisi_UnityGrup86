@@ -5,6 +5,7 @@ using TMPro;
 using GameManagerNamespace;
 using System.Collections.Generic;
 using static UnityEngine.ParticleSystem;
+using UnityEngine.UI;
 
 public class CollectManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class CollectManager : MonoBehaviour
     [SerializeField] AudioClip[] _collectClips;
     [SerializeField] AudioClip _transitionClip;
     [SerializeField] GameObject _timeline;
+    [SerializeField] Image _oldScoreImage;
+    [SerializeField] Sprite _newScoreImage;
 
     MeshFilter _meshFilter;
     MeshRenderer _meshRenderer;
@@ -29,13 +32,16 @@ public class CollectManager : MonoBehaviour
 
     [HideInInspector]
     public float collectedFruitCount;
+
     public float totalFruitCount;
     float score;
+
     Vector3 growedScale;
     Vector3 tempShrink;
     Vector3 graterShrinkVector;
     MinMaxGradient currentFruitGradient;
 
+    [HideInInspector]
     public List<float> collectedFruits = new List<float>();
 
     void Start()
@@ -44,6 +50,8 @@ public class CollectManager : MonoBehaviour
         _meshFilter = GetComponent<MeshFilter>();
         _meshRenderer = GetComponent<MeshRenderer>();
         graterShrinkVector = new Vector3(graterShrinkFraction / 700, graterShrinkFraction / 700, graterShrinkFraction / 700);
+
+        totalFruitCount = GameObject.FindGameObjectsWithTag("CollectableFruit").Length;
     }
 
     void OnTriggerEnter(Collider other)
@@ -80,8 +88,9 @@ public class CollectManager : MonoBehaviour
             {
                 SoundManager.Instance.PlaySoundEffect(_transitionClip);
                 ParticleSystem transitionParticle = Instantiate(Finish.Instance._finishParticles, _transform.position, Quaternion.identity);
-                transitionParticle.Play();
                 GameManager.Instance.currentFruitID++;
+                transitionParticle.Play();
+                _oldScoreImage.sprite = _newScoreImage;
                 _meshFilter.mesh = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._mesh;
                 _meshRenderer.materials = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._materials;
 
@@ -109,10 +118,6 @@ public class CollectManager : MonoBehaviour
 
             if (other.gameObject.CompareTag("Finish"))
             {
-                //foreach (var fruitCount in collectedFruits)
-                //{
-                //    _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount")+2 / totalFruitCount * fruitCount);
-                //}
                 collectedFruits.Add(collectedFruitCount);
                 GameManager.Instance.Finished();
                 _timeline.SetActive(true);
@@ -151,5 +156,6 @@ public class CollectManager : MonoBehaviour
             Instance = this;
         }
         else Destroy(gameObject);
+
     }
 }

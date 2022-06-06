@@ -10,7 +10,7 @@ using TMPro;
 
 public class AdManager : MonoBehaviour
 {
-    InterstýtýalAd _ad;
+    public InterstýtýalAd _ad;
     public static AdManager Instance = null;
 
     [SerializeField] Image _timerPanel;
