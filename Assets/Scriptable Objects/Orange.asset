@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db3d43f0ba91074091554542b287934, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 7674351596926666324, guid: bd03b904c5a3f8c488e4cfe113af2ae9, type: 3}
+  _mesh: {fileID: 6723580601522748004, guid: f8ce617c901b0034995ea667aaec5834, type: 3}
   _materials:
-  - {fileID: 2100000, guid: ed6a2c7f366562d40b54045267a74b89, type: 2}
-  - {fileID: 2100000, guid: ce8113c1389a80344a24c5faa6d6ef34, type: 2}
-  - {fileID: 2100000, guid: 93438dffef65a46438ebc15a3efbc392, type: 2}
+  - {fileID: 2100000, guid: f094ba6c9e243994f92a069f4f7b521a, type: 2}
+  - {fileID: 2100000, guid: 6c367837642b4e145b611b0e893af225, type: 2}
+  - {fileID: 2100000, guid: d10af6ebd7a2b094998141adcd19b7ca, type: 2}
   _gradient:
     m_Mode: 4
     m_GradientMin:

@@ -28,7 +28,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && GameManager.Instance.gameState != GameManager.GameState.Dead)
+        if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.SetActive(false);
             _topRestartButton.gameObject.SetActive(false);
@@ -51,8 +51,8 @@ public class Finish : MonoBehaviour
         collectedFruits = CollectManager.Instance.collectedFruits;
         foreach (var fruitCount in collectedFruits)
         {
-            _juice.material.SetFloat("fillAmount", _juice.material.GetFloat("fillAmount") + 2 / CollectManager.Instance.totalFruitCount * fruitCount);
-            float fruitPercent = _juice.material.GetFloat("fillAmount") + 2 / CollectManager.Instance.totalFruitCount * fruitCount;
+            //_juice.material.SetFloat("fillAmount", _juice.material.GetFloat("fillAmount") + 4 / CollectManager.Instance.totalFruitCount * fruitCount);
+            float fruitPercent = _juice.material.GetFloat("fillAmount") + 4 / CollectManager.Instance.totalFruitCount * fruitCount;
 
             DOTween.To(() => fill, x => fill = x, fruitPercent, 5).OnUpdate(() =>
             {
