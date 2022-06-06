@@ -135,9 +135,12 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 
 - **Sprint board update**: Sprint board Ekran görüntüsü:
 
+
 - **Ürün Durumu**: Ekran görüntüleri:
 ![image](https://user-images.githubusercontent.com/104429912/172237600-e53cfa79-339b-4210-892b-bedceeb08de3.png)
+
 ![image](https://user-images.githubusercontent.com/104429912/172237692-8236756d-8a87-4e26-babb-2b3a9464cb57.png)
+
 ![image](https://user-images.githubusercontent.com/104429912/172237846-1450153a-f699-401e-b3e5-d19a60b1d79e.png)
 
 
