@@ -24,19 +24,18 @@ Oyun ve Uygulama Akademisi Bootcamp Unity 86. Grup Oyun Projesi
 
 ## Ürün Açıklaması
 
-Level tabanlı runner türünde olan bu oyun aynı zamanda oyunculara keyifle geçirilecek bir zaman deneyimi sunmakta. Oynanan karakterin çeşitli engeller ve onu zorlayacak yollardan geçmesi ve bu yollardan geçerken kendini geliştirmeye devam etmesi ile birlikte eğlence de tıpkı karakterler gibi büyüyor.
- 
-Yuvarlan ve büyü… İşte bütün kuralımız bu.
-Aman dikkat et! Yollardaki engeller kuralları durdurmasın… 
+Level tabanlı runner tarzında olan oyun; oyunculara keyifle geçirilecek, eğelenceli bir zaman yaratıyor. Karakterin çeşitli engellerden geçip kendi cinsi meyveleri toplarken büyüdüğü gibi eğelence de bu esnada karakterimiz gibi büyüyor. 
+
+Yuvarlan ve büyü… işte, bütün kuralımız bu. Aman dikkat et! Yoldaki engeller büyümene engel olmasın...
  
 
 ## Ürün Özellikleri
 
-Hypercasual tarzında, seviye ile ilerlenen bir oyun.
-Oyunda karakterler bir sebze ya da meyve olarak karşımıza çıkıyor.
-Karakter ilerledikçe geçtiği yollarda bulunan ve puan almasını sağlayan kendisinden olan sebze veya meyveler var. Bu ürünleri toplamak hem puan getirisi sağlıyor hem de karakterin büyüklüğünün artmasına sebep oluyor. 
-Ancak yollarda bazı engeller de bulunmakta. Bu engeller karakterin o engelin karşısına gelene kadar topladıklarının azalmasına neden olmakta. 
-Oyunu oynayan oyuncular da yollarda bulunan puanları toplayıp engellerden kaçarak kendi karakterlerini büyütmeyi amaçlıyorlar. 
+Hypercasual tarzında, seviye seviye ilerleyen bir oyun. 
+Oyundaki karakterlerimiz meyveler. Oyun başlayınca karakterimiz meyveleri topluyor, topladıkça büyüyor ve puan kazanıyor.  
+Mutfak tezgahı üzerinde hareket eden karakterimizin karşısına sahneyle bağlantılı çeşitli engeller çıkıyor. 
+Engellere takılırsa oyun bitiyor ve yeniden başlıyor. 
+Oyunu oynayan oyuncular karşılarına çıkan engellere takılmadan meyveleri toplayıp, karakterlerini büyütüp yüksek puan almayı hedefliyor. 
 
 ## Hedef Kitle
 
