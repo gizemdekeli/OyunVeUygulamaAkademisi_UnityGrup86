@@ -157,7 +157,6 @@ Bir önceki sprintte kullanıcıya daha keyifli ve gerçekçi bir deneyim yaşat
 Bir önceki sprintlerden kalanlar ve belirlenen hedeflerin yerine getirildiği verimli bir sprint oldu.  oyun tanıtım videosu için görev dağılımı yapıldı. Ürün belgesinde oyunumuzun son haline göre değişikler yapıldı.  Önceki, sprintlerde olduğu gibi toplantı notları ve backlog puanları miroya eklendi.
 
 ### **Ek Notlar:**
-Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
 
 
 ####  Dışarıdan temin edilen assetler: 
