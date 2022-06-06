@@ -41,6 +41,7 @@ namespace GameManagerNamespace
         [SerializeField] AudioClip _gameOverClip;
         [SerializeField] Transform _blender;
         [SerializeField] CanvasRenderer _topPanel;
+        [SerializeField] GameObject _learn;
 
 
         [HideInInspector]
@@ -175,6 +176,20 @@ namespace GameManagerNamespace
             gameState = GameState.Started;
             isShrinking = true;
             _rigidbody.isKinematic = false;
+
+            if (PlayerPrefs.GetString("FirstPlay") == "Yes")
+            {
+                StartCoroutine(HowToPlay());
+            }
+            
+        }
+
+        IEnumerator HowToPlay()
+        {
+            _learn.SetActive(true);
+            yield return new WaitForSeconds(3);
+            _learn.SetActive(false);
+            PlayerPrefs.SetString("FirstPlay", "YES");
         }
 
         private void Setup()
