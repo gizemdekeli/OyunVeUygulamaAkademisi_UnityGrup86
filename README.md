@@ -132,6 +132,9 @@ Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler ür
 
 - **Daily Scrum**: Discord ve whatsapp üzerinden iletişime geçildi ve bunların dışında 4 adet toplantı yapıldı.
 
+[Daily Scrum Görselleri / Word Belgesi]
+https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/blob/main/Project%20Management/Sprint%203%20Documents/Daily%20Scrums%20Sprint%203.docx
+
 - **Sprint board update**: Sprint board Ekran görüntüsü:
 
 ![Ekran Alıntısı](https://user-images.githubusercontent.com/104429912/172244212-bf7070a7-3929-4829-9da4-3bcd1bda6852.PNG)
