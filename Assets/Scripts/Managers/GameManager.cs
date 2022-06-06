@@ -189,7 +189,7 @@ namespace GameManagerNamespace
             _learn.SetActive(true);
             yield return new WaitForSeconds(3);
             _learn.SetActive(false);
-            PlayerPrefs.SetString("FirstPlay", "YES");
+            PlayerPrefs.SetString("FirstPlay", "Yes");
         }
 
         private void Setup()
