@@ -122,6 +122,8 @@ Oyun logosu ve takım ismiyle alakalı çalışmalar yapıldı. Kesin karar bir 
 - **Sprint Retrospective:**
 Bazı sorunlar nedeniyle eksik kalan backloglar için alternatif çözümler üretildi, görevlerde değişiklik yapıldı. yapılacak eklentilerle ilgili görev dağılımı yapıldı. Backlog tabloları düzenlendi. Bir önceki sprintte olduğu gibi miro linkinde toplantı notları ve sprint backlog ve puanları paylaşıldı 
 
+# Sprint 3
+
 ### **Ek Notlar:**
 Oyunun sprint sonundaki hali [buradan](https://github.com/gizemdekeli/OyunVeUygulamaAkademisi_UnityGrup86/raw/main/Build/Android/Roll%20N%20Grow.apk) apk olarak indirilip test edilebilir.
 
