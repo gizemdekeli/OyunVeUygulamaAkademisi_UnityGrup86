@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
-using UnityEngine.UI;
 using GameManagerNamespace;
 using System.Collections.Generic;
 using static UnityEngine.ParticleSystem;
@@ -21,13 +20,12 @@ public class CollectManager : MonoBehaviour
     [SerializeField] AudioClip[] _collectClips;
     [SerializeField] AudioClip _transitionClip;
     [SerializeField] GameObject _timeline;
-    [SerializeField] Image _oldScoreImage;
-    [SerializeField] Sprite _newScoreImage;
 
     MeshFilter _meshFilter;
     MeshRenderer _meshRenderer;
 
-    Material _juice;
+    [HideInInspector]
+    public Material _juice;
 
     [HideInInspector]
     public float collectedFruitCount;
@@ -38,10 +36,10 @@ public class CollectManager : MonoBehaviour
     Vector3 graterShrinkVector;
     MinMaxGradient currentFruitGradient;
 
+    public List<float> collectedFruits = new List<float>();
 
     void Start()
     {
-
         _juice = Finish.Instance._juice.material;
         _meshFilter = GetComponent<MeshFilter>();
         _meshRenderer = GetComponent<MeshRenderer>();
@@ -59,7 +57,7 @@ public class CollectManager : MonoBehaviour
                 collectedFruitCount++;
                 score += scoreIncreaseAmount;
                 ScoreToText();
-                _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount") + (2 / totalFruitCount));
+
                 SoundManager.Instance.PlaySoundEffect(_collectClips[Random.Range(0, _collectClips.Length)]);
 
                 currentFruitGradient = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._gradient;
@@ -86,15 +84,16 @@ public class CollectManager : MonoBehaviour
                 GameManager.Instance.currentFruitID++;
                 _meshFilter.mesh = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._mesh;
                 _meshRenderer.materials = GameManager.Instance.fruitTypes[GameManager.Instance.currentFruitID]._materials;
-                _oldScoreImage.sprite = _newScoreImage;
 
+                collectedFruits.Add(collectedFruitCount);
+                collectedFruitCount = 0;
             }
 
 
             if (other.gameObject.CompareTag("Obstacle"))
             {
                 GameManager.Instance.Dead();
-                Debug.Log("Devam iï¿½in Reklam izlenip devam edilecek veya oyun yeniden baï¿½layacak.");
+                Debug.Log("Devam için Reklam izlenip devam edilecek veya oyun yeniden baþlayacak.");
             }
 
 
@@ -110,6 +109,11 @@ public class CollectManager : MonoBehaviour
 
             if (other.gameObject.CompareTag("Finish"))
             {
+                //foreach (var fruitCount in collectedFruits)
+                //{
+                //    _juice.SetFloat("fillAmount", _juice.GetFloat("fillAmount")+2 / totalFruitCount * fruitCount);
+                //}
+                collectedFruits.Add(collectedFruitCount);
                 GameManager.Instance.Finished();
                 _timeline.SetActive(true);
             }

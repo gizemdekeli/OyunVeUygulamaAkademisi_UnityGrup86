@@ -25,6 +25,7 @@ namespace GameManagerNamespace
         public enum GameState { Started, Paused, Dead, Finished }
         public GameState gameState;
 
+        [HideInInspector]
         public int currentFruitID = 0;
 
         [SerializeField] public FruitTypes[] fruitTypes;

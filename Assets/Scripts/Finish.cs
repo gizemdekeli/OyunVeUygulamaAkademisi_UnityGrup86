@@ -18,12 +18,12 @@ public class Finish : MonoBehaviour
     [SerializeField] public Renderer _juice;
     [SerializeField] CollectManager _collectManager;
     [SerializeField] AudioClip _mixerSound;
-    [SerializeField] AudioClip _splashFX;
+    [SerializeField] AudioClip _collectSound;
 
     float tempFillAmount;
     float fill = -1;
     float volume;
-
+    List<float> collectedFruits = new List<float>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +31,7 @@ public class Finish : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             _topRestartButton.gameObject.SetActive(false);
-            SoundManager.Instance.PlaySoundEffect(_splashFX);
+            SoundManager.Instance.PlaySoundEffect(_collectSound);
 
             DOTween.To(() => volume, x => volume = x, 0.2f, 7).OnUpdate(() =>
             {
@@ -49,13 +49,26 @@ public class Finish : MonoBehaviour
 
     public void Fill()
     {
-        tempFillAmount = _juice.material.GetFloat("fillAmount");
-        _juice.material.SetFloat("fillAmount", -1);
+        //tempFillAmount = _juice.material.GetFloat("fillAmount");
+        //_juice.material.SetFloat("fillAmount", -1);
 
-        DOTween.To(() => fill, x => fill = x, tempFillAmount, 5).OnUpdate(() =>
+        //DOTween.To(() => fill, x => fill = x, tempFillAmount, 5).OnUpdate(() =>
+        //{
+        //    _juice.material.SetFloat("fillAmount", fill);
+        //}).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.3f).SetEase(Ease.OutBack));
+
+        collectedFruits = CollectManager.Instance.collectedFruits;
+        foreach (var fruitCount in collectedFruits)
         {
-            _juice.material.SetFloat("fillAmount", fill);
-        }).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.3f).SetEase(Ease.OutBack));
+            _juice.material.SetFloat("fillAmount", _juice.material.GetFloat("fillAmount") + 2 / CollectManager.Instance.totalFruitCount * fruitCount);
+            float fruitPercent = _juice.material.GetFloat("fillAmount") + 2 / CollectManager.Instance.totalFruitCount * fruitCount;
+
+            DOTween.To(() => fill, x => fill = x, fruitPercent, 5).OnUpdate(() =>
+            {
+                _juice.material.SetFloat("fillAmount", fill);
+                Debug.Log(fruitPercent);
+            }).OnComplete(() => _finishPanel.transform.DOLocalMoveY(0, 0.3f).SetEase(Ease.OutBack));
+        }
 
         SoundManager.Instance.PlaySoundEffect(_mixerSound);
         _juice.material.DOColor(new Color(1, 0.23f, 0, 1), 2);

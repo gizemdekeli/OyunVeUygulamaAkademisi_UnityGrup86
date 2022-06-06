@@ -20,6 +20,7 @@ public class AdManager : MonoBehaviour
     [SerializeField] Image _adPowerUpImage;
     [SerializeField] GameObject _shield;
     [SerializeField] float adPowerUpTime;
+    [SerializeField] AudioClip _countdownSound;
 
     [HideInInspector]
     public Vector3 tempVelocity;
@@ -47,7 +48,6 @@ public class AdManager : MonoBehaviour
         Debug.Log("Reklam Bitti");
         _shield.SetActive(true);
         Time.timeScale = 1;
-        SoundManager.Instance.PlayMusic();
 
         tempVelocity = new Vector3(0, 0, GameManager.Instance._rigidbody.velocity.z);
         GameManager.Instance._rigidbody.freezeRotation = true;
@@ -56,6 +56,7 @@ public class AdManager : MonoBehaviour
         #region AdCooldown
         _timerPanel.gameObject.SetActive(true);
         _timerText.transform.DOScale(5f, 0.3f).SetLoops(10, LoopType.Restart);
+        SoundManager.Instance.PlaySoundEffect(_countdownSound);
         for (int i = 3; i >= 1; i--)
         {
             _timerText.text = i.ToString();
@@ -68,8 +69,8 @@ public class AdManager : MonoBehaviour
         yield return new WaitForSeconds(0.85f);
 
         #endregion
-
         GameManager.Instance.Started();
+        SoundManager.Instance.PlayMusic();
         _timerPanel.gameObject.SetActive(false);
 
         if (GameManager.Instance.gameState == GameManager.GameState.Started)
