@@ -189,7 +189,7 @@ namespace GameManagerNamespace
             _learn.SetActive(true);
             yield return new WaitForSeconds(3);
             _learn.SetActive(false);
-            PlayerPrefs.SetString("FirstPlay", "Yes");
+            
         }
 
         private void Setup()
@@ -204,6 +204,8 @@ namespace GameManagerNamespace
             }
             Physics.gravity = new Vector3(0, gravityScale, 0);
             Application.targetFrameRate = 30;   //Default FrameRate for mobile
+
+            PlayerPrefs.SetString("FirstPlay", "Yes");
         }
 
     }
