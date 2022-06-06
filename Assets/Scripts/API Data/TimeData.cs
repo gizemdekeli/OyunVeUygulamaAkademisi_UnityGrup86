@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TimeData
 {
-    public string isDayLightSavingsTime;
+    public bool isDayLightSavingsTime;
 }
